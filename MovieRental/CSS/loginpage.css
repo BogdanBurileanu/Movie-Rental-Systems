@@ -1,0 +1,71 @@
+body{
+    background-image:url('/EWD/Imagini/login_bg.jpg');
+    background-repeat:no-repat;
+    background-size:cover;
+    backdrop-filter: blur(10px);
+    font-family: Helvetica, sans-serif;
+    margin:0;
+}
+.loginwindow{
+    position:absolute;
+    max-width:100%;
+    max-height:500px;
+    top:15%;
+    left:23%;
+    box-shadow:0 8px 16px 0 rgba(0,0,0,20);
+    overflow:auto;
+}
+.loginimage{
+    position:relative;
+    width:700px;
+    float:left;
+    overflow:none;
+    height:auto;
+}
+.logininfo{
+    position:fixed;
+    background-color:white;
+    height:500px;
+    width:400px;
+    float:right;
+    right:20%;
+    margin:auto;
+}
+input[type=text], input[type=password] {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0px;
+margin-bottom:0px;
+display: inline-block;
+border: 1px solid #ccc;
+box-sizing: border-box;
+}
+.litext{
+    margin-left:3%;
+    margin-right:3%;
+    font-weight:bold;
+}
+.buttonsubmit{
+background-color:blue;
+color:white;
+cursor:pointer;
+width:40%;
+height:50px;
+border-color:none;
+border-radius:30px;
+font-size:17px;
+margin-top:50px;
+margin-left:100px;
+}
+.errortext{
+color:red;
+font-size:13px;
+}
+@media only screen and (max-width:1250px) {
+    .loginimage{
+        display:none;
+    }
+    .logininfo{
+        right:10%;
+    }
+}

@@ -1,0 +1,11 @@
+#framecontent{
+    position: relative; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: auto;
+    overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+    background: black;
+    color: white;
+    text-align:center;
+    }
