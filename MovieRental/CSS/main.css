@@ -1,0 +1,289 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body{margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: black;
+    }
+  
+  html{
+    scroll-behavior:smooth;
+  }
+  
+  .container {
+      position: relative;
+      color: white;
+    }
+  .img{
+      width:100%;
+      height:auto;
+  }
+  .line1 {
+      position: absolute;
+      width: 100%;
+      top: 8px;
+  }
+  .line2{
+      position:absolute;
+      width: 100%;
+      top: 100px;
+      color: white;
+  }
+  
+  .line3{
+      position:absolute;
+      width: 100%;
+  }
+
+  .line4 {
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      right:10%;
+      color:white;
+      font-family: IBMPlexSans-Bold;
+    }
+
+  .line5 {
+    position: absolute;
+    top: 49%;
+    left: 5%;
+    right:10%;
+    color:white;
+    font-family: IBMPlexSans-Regular;
+  }
+  .line6 {
+    position: absolute;
+    top: 52%;
+    left: 5%;
+    right:10%;
+    color:white;
+    font-family: IBMPlexSans-Regular;
+  }
+  .line7 {
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    right:10%;
+    color:white;
+    font-family: IBMPlexSans-Regular;
+  }
+
+  .line8{
+      position:absolute;
+      top:65%;
+      left:5%;
+  }
+
+  .line9{
+    position: absolute;
+    top: 35%;
+    float: right;
+    right: 10%;
+  }
+
+  .buttonmain {
+      border-radius: 8px;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      font-family: IBMPlexSans-Bold;
+      font-size: 24px;
+    }
+  .button10 {
+      background-color: transparent;
+      color: white;
+      border: 2px solid #e7e7e7;
+    }
+  .button10:hover {background-color: rgba(16, 10, 16, 0.7);}
+
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  .errortext{
+    color:red;
+    font-size:13px;
+    }
+
+  .timelineCircle{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    position: absolute;
+  }
+
+  .timelineCircle:hover{
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .timelineVerticalLine{
+    height: 100px;
+    width: 1px;
+    background-color: white;
+    position: absolute;
+  }
+
+  .timelineSectionText{
+    font-family: IBMPlexSans-Regular;
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    display: inline-block;
+  }
+
+  * {box-sizing: border-box;}
+  .mySlides {display: none;}
+  img {vertical-align: middle;}
+
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: white;
+  }
+  
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  .introSuggestions{
+    width: 240px;
+    height: 140px;
+    border-radius: 8px;
+    display: inline-block;
+    position: absolute;
+    bottom: -5px;
+    left: 5%;
+  }
+
+  #myProgress {
+    width: 215px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 130px;
+  }
+
+  #myBar{
+    width: 0px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .categories{
+    font-family: IBMPlexSans-Bold;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    display: inline;
+    left: 5%;
+    margin-top: 100px;
+  }
+
+  .categoriesDescription{
+    font-family: IBMPlexSans-Regular;
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    display: inline;
+    left: 5%;
+    margin-top: 140px;
+  }
+
+  .categoryBox{
+    width: 243px;
+    height: 62px;
+    border-radius: 8px;
+    background-color: white;
+    font-family: IBMPlexSans-Bold;
+    color: white;
+    font-size: 20;
+  }
+
+  
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  @media only screen and (max-width:1000px) {
+    .buttonmain, .newslinks{
+      display:none;
+    }
+    .content3{
+      display:none;}
+    
+    .news{
+      width:90%;
+      left:5%;
+      top:-300px;
+    }
+    .newstext{
+        margin-left:5%;
+    }
+    .line4{
+      display:none;
+    }
+  }
+
+  @font-face {
+    font-family: IBMPlexSans-Bold;
+    src: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/Fonts/IBMPlexSans-Bold.ttf');
+  };
+
+  @font-face {
+    font-family: IBMPlexSans-Regular;
+    src: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/Fonts/IBMPlexSans-Regular.ttf');
+  }
