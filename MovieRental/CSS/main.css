@@ -114,6 +114,10 @@
     font-size:13px;
     }
 
+  a {
+    text-decoration: none;
+  }
+
   .timelineCircle{
     height: 25px;
     width: 25px;
@@ -222,17 +226,60 @@
   }
 
   .categoryBox{
-    width: 243px;
-    height: 62px;
+    width: 242.47px;
+    height: 61.45px;
     border-radius: 8px;
-    background-color: white;
     font-family: IBMPlexSans-Bold;
     color: white;
+    background-color: transparent;
     font-size: 20;
+    margin-top: 40px;
+    margin-left: 5%;
+    text-align: center;
+    text-transform: none;
   }
 
-  
-  
+  .newReleases{
+    font-family: IBMPlexSans-Bold;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    display: inline;
+    left: 5%;
+    margin-top: 40px;
+  }
+
+  .newReleaseDescription{
+    font-family: IBMPlexSans-Regular;
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    display: inline;
+    left: 5%;
+    margin-top: 90px;
+  }
+
+  .releaseRectange{
+    width: 548px;
+    height: 262px;
+    border-radius: 8px;
+    margin-top: 150px;
+    margin-left: 5%;
+  }
+
+  .releaseRectangleDetails{
+    font-family: IBMPlexSans-Bold;
+    font-size: 18px;
+    color: white;
+    position: absolute;
+    display: inline;
+    left: 5%;
+  }
+
+  #category{
+    display: hidden;
+  }
+
   @-webkit-keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
