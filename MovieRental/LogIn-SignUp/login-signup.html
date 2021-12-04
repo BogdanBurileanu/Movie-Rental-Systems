@@ -1,19 +1,3 @@
-<?php 
-error_reporting(0);
-require 'accounts.php';
-if (isset($_SESSION['id']) && !isset($_SESSION['loginmsg'])){
-    header("location:main.php");
-    exit();
-}
-if($_SESSION['loginmsg']){
-    echo ("<div class='alert animate' id='alert'><div id='myBar'></div><span class='closebtn' onclick="."location.href='main.php';".">&times;</span> Bine ai revenit <b>".$_SESSION['firstName'].".</b> Te vom redirec&#355iona la pagina principal&#259 <span id='txt'></span></div></div>");
-    unset($_SESSION['loginmsg']);
-}
-if(!empty($_GET['status'])){
-    echo ("<div class='alert animate' id='alert'><div id='myBar'></div><span class='closebtn' onclick="."this.parentElement.style.display='none';".">&times;</span> Te-ai deconectat cu succes!</div></div>");
-}
-
-?>
 <html>
     <head>
         <title>Log in - London Underground</title>
