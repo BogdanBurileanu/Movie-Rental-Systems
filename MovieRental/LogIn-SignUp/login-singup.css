@@ -1,0 +1,128 @@
+@font-face {
+    font-family: Font1;
+    src: url("../Dependencies/Fonts/IBMPlexSans-Bold.ttf");
+}
+body{
+    background-image: url("../Dependencies/ImageAssets/slideshow1.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+    .pclass1{ 
+     color:white;
+     font-size: 7vh;
+     margin-left: 22vh;
+     margin-top: -1vh;
+     font-family:'Font1';
+ }
+ .pclass2{
+     color:white;
+     font-size: 4vh;
+     margin-left: 16vh;
+     margin-top: -5vh;
+     font-family:'Font1';
+ }
+ h2{
+
+    color:white;
+    font-size: 2.4vh;
+    margin-left: 22vh;
+    margin-top: 21vh;
+    font-family:'Font1';
+ }
+ #rcorners3 {
+    border-radius: 25px;
+    background-color: white;
+    background-position: left top;
+    background-repeat: repeat;
+    opacity: 0.7; 
+    width: 40vh;
+    height:50vh;  
+    margin-left: 140vh;
+  }
+  .button1
+  {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    margin-left: 5vh;
+    margin-top:2vh;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family:'Font1';
+  }
+  .info {
+    border-color: #2196F3;
+    color: black
+  }
+  
+  .info:hover {
+    background: #2196F3;
+    color: white;
+  }
+  .input1{
+      font-weight: bold;
+      margin-left: 4vh;
+      height: 4vh;
+      background-color: rgb(211, 195, 195);
+      border-radius: 8px;
+      width: 33vh;
+      margin-top: 10vh;
+      color:black;
+      font-family:'Font1';
+    
+  }
+  .input2{
+    font-weight: bold;
+    margin-left: 4vh;
+    height: 4vh;
+    background-color: rgb(211, 195, 195);
+    border-radius: 8px;
+    width: 33vh;
+    margin-top: 2vh;
+    color:black;
+    font-family:'Font1';
+}
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+
+ .line1
+ {
+     margin-top:32vh;
+ }
+
+ .line2
+ {
+     margin-top:-20vh;
+ }
+
+ .line3
+ {
+     margin-top:-32vh;
+ }
+
+ .logSignButton
+ {
+     margin-left:4vh;
+     margin-top: 10vh;
+     border-radius: 8px;
+     padding: 2vh 14vh;
+     background-color: black;
+     font-weight: bold;
+     font-family:'Font1';
+
+ }
+ .log {
+    border-color: #000000;
+    color: rgb(255, 255, 255)
+  }
+  
+  .log:hover {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+  }
