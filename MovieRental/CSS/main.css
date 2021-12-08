@@ -239,6 +239,12 @@
     text-transform: none;
   }
 
+  .categoryText{
+    margin-left: 20px;
+    margin-top: 22px;
+    position: absolute;
+  }
+
   .newReleases{
     font-family: IBMPlexSans-Bold;
     font-size: 30px;

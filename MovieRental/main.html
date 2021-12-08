@@ -11,194 +11,223 @@
         
     </head>
     <body>
-        <div class="line3">
-            <div class="navmenu" id="nrnavmenuid">
-                <button class="account" id="buttonAccount" onclick="yourAccount()">Your account</button>
-                <button class="movies" style="left: 52%">TV Shows</button>
-                <button class="movies active" style="left: 40%; color: black" id="moviesButton">Movies</button>
-                <button id="category" class="movies active" style="left: 53%; display: none;">Category</button>
-            </div>  
+        <div id="movies">
+            <div class="line3">
+                <div class="navmenu" id="nrnavmenuid">
+                    <button class="account" id="buttonAccount" onclick="yourAccount()">Your account</button>
+                    <button class="movies" style="left: 52%" onclick="switchToTVShows()">TV Shows</button>
+                    <button class="movies active" style="left: 40%; color: black" id="moviesButton">Movies</button>
+                    <button id="category" class="movies active" style="left: 53%; display: none;">Category</button>
+                </div>  
 
-            <div class="line2" style="color: white;padding-left: 5%;padding-right: 5%; position: fixed; z-index: 4"><hr></div>
-            
-            <div class="youraccount" id="accountButton" style="z-index: 4">
-                <p style="font-size: 24px; margin-left: 55px;">Your account</p>
-                <p class="account-fieldName" style="margin-top: 50px">Your personal information</p>
-                <p class="account-fieldContent">Username: </p>
-                <p class="account-fieldContent">Email: </p>
-                <button class="signoutButton">Sign out</button>
+                <div class="line2" style="color: white;padding-left: 5%;padding-right: 5%; position: fixed; z-index: 4"><hr></div>
+                
+                <div class="youraccount" id="accountButton" style="z-index: 4">
+                    <p style="font-size: 24px; margin-left: 55px;">Your account</p>
+                    <p class="account-fieldName" style="margin-top: 50px">Your personal information</p>
+                    <p class="account-fieldContent">Username: </p>
+                    <p class="account-fieldContent">Email: </p>
+                    <button class="signoutButton">Sign out</button>
+                </div>
+
+                <script src="Dependencies/JavaScript/LogSignIn.js"></script>
             </div>
 
-            <script src="Dependencies/JavaScript/LogSignIn.js"></script>
-        </div>
+            <div id="moviesLayer" onclick="enableScroll()">
+                <div class="container">
+                    <div class="slideshow-container" syle="z-index: 2;">
+                        <div class="mySlides fade">
+                        <img src="..\MovieRental\Dependencies\ImageAssets\Background.png" class="img">
+                        </div>
+                        <div class="mySlides fade">
+                        <img src="..\MovieRental\Dependencies\ImageAssets\Paris,Texas.jpeg" class="img">
+                        </div>
+                        <div class="mySlides fade">
+                        <img src="..\MovieRental\Dependencies\ImageAssets\slideshow3.png" class="img">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="..\MovieRental\Dependencies\ImageAssets\Hell_or_High_Water.jpeg" class="img">
+                        </div>
+                    </div>
 
-        <div id="mainBackground" onclick="enableScroll()">
-            <div class="container">
-                <div class="slideshow-container" syle="z-index: 2;">
-                    <div class="mySlides fade">
-                    <img src="..\MovieRental\Dependencies\ImageAssets\Background.png" class="img">
-                    </div>
-                    <div class="mySlides fade">
-                    <img src="..\MovieRental\Dependencies\ImageAssets\Paris,Texas.jpeg" class="img">
-                    </div>
-                    <div class="mySlides fade">
-                    <img src="..\MovieRental\Dependencies\ImageAssets\slideshow3.png" class="img">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="..\MovieRental\Dependencies\ImageAssets\Hell_or_High_Water.jpeg" class="img">
-                    </div>
-                </div>
-
-                <div>
-                    <div class = "introSuggestions" style="margin-left: 5%"> 
-                        <img src="..\MovieRental\Dependencies\ImageAssets\slideshow1.png" class="img introSuggestions">
-                        <div id="myProgress" style="margin-left: 10%;"><div id="myBar"></div></div>
-                    </div>
-                    <div class = "introSuggestions" style="margin-left: 25%"> 
-                        <img src="..\MovieRental\Dependencies\ImageAssets\slideshow2.png" class="img introSuggestions">
-                        <div id="myProgress"><div id="myBar"></div></div>
-                    </div>
-                    <div class = "introSuggestions" style="margin-left: 45%"> 
-                        <img src="..\MovieRental\Dependencies\ImageAssets\slideshow3.png" class="img introSuggestions">
-                        <div id="myProgress"><div id="myBar"></div></div>
-                    </div>
-                    <div class = "introSuggestions" style="margin-left: 65%"> 
-                        <img src="..\MovieRental\Dependencies\ImageAssets\Background.png" class="img introSuggestions">
-                        <div id="myProgress"><div id="myBar"></div></div>
-                    </div>
-                </div>
-
-                <div>
                     <div>
-                        <div class="line4"><p id="introTitle" style="font-size:64px;"></p></div>
-                        <div class="line5"><p id="introGenre"></p></div><br>
-                        <div class="line6"><p id="introDirector"></p></div><br>
-                        <div class="line7"><p id="introOther"></p></div><br>
-                        <div class="line8"><button id="introLink" class="buttonmain button10 animate">WATCH NOW</button></div>
+                        <div class = "introSuggestions" style="margin-left: 5%"> 
+                            <img src="..\MovieRental\Dependencies\ImageAssets\slideshow1.png" class="img introSuggestions">
+                            <div id="myProgress" style="margin-left: 10%;"><div id="myBar"></div></div>
+                        </div>
+                        <div class = "introSuggestions" style="margin-left: 25%"> 
+                            <img src="..\MovieRental\Dependencies\ImageAssets\slideshow2.png" class="img introSuggestions">
+                            <div id="myProgress"><div id="myBar"></div></div>
+                        </div>
+                        <div class = "introSuggestions" style="margin-left: 45%"> 
+                            <img src="..\MovieRental\Dependencies\ImageAssets\slideshow3.png" class="img introSuggestions">
+                            <div id="myProgress"><div id="myBar"></div></div>
+                        </div>
+                        <div class = "introSuggestions" style="margin-left: 65%"> 
+                            <img src="..\MovieRental\Dependencies\ImageAssets\Background.png" class="img introSuggestions">
+                            <div id="myProgress"><div id="myBar"></div></div>
+                        </div>
                     </div>
 
-                    <div id="cateogories "class="line9" style="z-index: 1;">
-                        <div class="timelineCircle"></div>
-                        <div class="timelineSectionText" style="left: -70px; top: 3px;">Categories</div>
-                        <div class="timelineVerticalLine" style="left: 12px;top:24px"></div>
-                        <div class="timelineCircle" style="top: 124px"></div>
-                        <div class="timelineSectionText" style="left: -70px; top: 127px;">New Releases</div>
-                        <div class="timelineVerticalLine" style="left: 12px;top:148px"></div>
-                        <div class="timelineCircle" style="top: 248px"></div>
-                        <div class="timelineSectionText" style="left: -70px; top: 245px;">Upcoming Releases</div>
+                    <div>
+                        <div>
+                            <div class="line4"><p id="introTitle" style="font-size:64px;"></p></div>
+                            <div class="line5"><p id="introGenre"></p></div><br>
+                            <div class="line6"><p id="introDirector"></p></div><br>
+                            <div class="line7"><p id="introOther"></p></div><br>
+                            <div class="line8"><button id="introLink" class="buttonmain button10 animate">WATCH NOW</button></div>
+                        </div>
+
+                        <div id="cateogories "class="line9" style="z-index: 1;">
+                            <div class="timelineCircle"></div>
+                            <div class="timelineSectionText" style="left: -70px; top: 3px;">Categories</div>
+                            <div class="timelineVerticalLine" style="left: 12px;top:24px"></div>
+                            <div class="timelineCircle" style="top: 124px"></div>
+                            <div class="timelineSectionText" style="left: -70px; top: 127px;">New Releases</div>
+                            <div class="timelineVerticalLine" style="left: 12px;top:148px"></div>
+                            <div class="timelineCircle" style="top: 248px"></div>
+                            <div class="timelineSectionText" style="left: -70px; top: 245px;">Upcoming Releases</div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <script src="..\MovieRental\Dependencies\JavaScript\slideshowgallery.js"></script>
+                <script src="..\MovieRental\Dependencies\JavaScript\slideshowgallery.js"></script>
 
-            <p class="categories">Categories</p>
-            <p class="categoriesDescription">Are we feeling romantic today?</p>
+                <p class="categories">Categories</p>
+                <p class="categoriesDescription">Are we feeling romantic today?</p>
 
-            <div id="categories" style="display: hidden;">
-                <div style="margin-top: 200px;">
-                    <a href="../MovieRental/cateogory.html?action">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/action.png');">
-                        <div style="margin-bottom: -32px">Action</div>
-                    </div></a>
+                <div id="categories" style="display: hidden;">
+                    <div style="margin-top: 200px;">
+                        <a href="../MovieRental/cateogory.html?action">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/action.png');">
+                            <p class="categoryText">Action</p>
+                        </div></a>
 
-                    <a href="../MovieRental/main.html?crime">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/crime.png');">
-                        <p style="top: -32px">Crime</p>
-                    </div></a>
+                        <a href="../MovieRental/cateogory.html?crime">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/crime.png');">
+                            <p class="categoryText">Crime</p>
+                        </div></a>
 
-                    <a href="../MovieRental/main.html?fantasy">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/fantasy.png');">
-                        <p style="top: -32px">Fantasy</p>
-                    </div></a>
+                        <a href="../MovieRental/cateogory.html?fantasy">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/fantasy.png');">
+                            <p class="categoryText">Fantasy</p>
+                        </div></a>
 
-                    <a href="../MovieRental/main.html?mystery">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/mystery.png');">
-                        <p style="top: -32px">Mystery</p>
-                    </div></a>
+                        <a href="../MovieRental/cateogory.html?mystery">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/mystery.png');">
+                            <p class="categoryText">Mystery</p>
+                        </div></a>
+                    </div>
+
+                    <div style="margin-top: -408px; margin-left: 25%;">
+                        <a href="../MovieRental/cateogory.html?adventure">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/adventure.png');">
+                            <p class="categoryText">Adventure</p>
+                        </div></a>
+
+                        <a href="../MovieRental/cateogory.html?documentary">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/documentary.png');">
+                            <p class="categoryText">Documentary</p>
+                        </div></a>
+
+                        <a href="../MovieRental/cateogory.html?history">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/history.png');">
+                            <p class="categoryText">History</p>
+                        </div></a>
+
+                        <a href="../MovieRental/cateogory.html?romance">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/romance.png');">
+                            <p class="categoryText">Romance</p>
+                        </div></a>
+                    </div>
+
+                    <div style="margin-top: -408px; margin-left: 50%;">
+                        <a href="../MovieRental/cateogory.html?animation">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/animation.png');">
+                            <p class="categoryText">Animation</p>
+                        </div></a>
+
+                        <a href="../MovieRental/cateogory.html?drama">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/drama.png');">
+                            <p class="categoryText">Drama</p>
+                        </div></a>
+
+                        <a href="../MovieRental/cateogory.html?horror">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/horror.png');">
+                            <p class="categoryText">Horror</p>
+                        </div></a>
+
+                        <a href="../MovieRental/cateogory.html?sf">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/sf.png');">
+                            <p class="categoryText">Science Fiction</p>
+                        </div></a>
+                    </div>
+
+                    <div style="margin-top: -408px; margin-left: 75%;">
+                        <a href="../MovieRental/cateogory.html?comedy">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/comedy.png');">
+                            <p class="categoryText">Comedy</p>
+                        </div></a>
+
+                        <a href="../MovieRental/cateogory.html?family">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/family.png');">
+                            <p class="categoryText">Family</p>
+                        </div></a>
+
+                        <a href="../MovieRental/cateogory.html?music">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/music.png');">
+                            <p class="categoryText">Music</p>
+                        </div></a>
+
+                        <a href="../MovieRental/cateogory.html?thriller">
+                        <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/thriller.png');">
+                            <p class="categoryText">Thriller</p>
+                        </div></a>
+                    </div>
                 </div>
 
-                <div style="margin-top: -408px; margin-left: 25%;">
-                    <a href="../MovieRental/main.html?adventure">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/adventure.png');">
-                        <p style="top: -32px">Adventure</p>
-                    </div></a>
-
-                    <a href="../MovieRental/main.html?documentary">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/documentary.png');">
-                        <p style="top: -32px">Documentary</p>
-                    </div></a>
-
-                    <a href="../MovieRental/main.html?history">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/history.png');">
-                        <p style="top: -32px">History</p>
-                    </div></a>
-
-                    <a href="../MovieRental/main.html?romance">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/romance.png');">
-                        <p style="top: -32px">Romance</p>
-                    </div></a>
+                <div>
+                    <p class="newReleases">New releases</p>
+                    <p class="newReleaseDescription">Fresh out the Holywood oven</p>
                 </div>
 
-                <div style="margin-top: -408px; margin-left: 50%;">
-                    <a href="../MovieRental/main.html?animation">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/animation.png');">
-                        <p style="top: -32px">Animation</p>
-                    </div></a>
-
-                    <a href="../MovieRental/main.html?drama">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/drama.png');">
-                        <p style="top: -32px">Drama</p>
-                    </div></a>
-
-                    <a href="../MovieRental/main.html?horror">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/horror.png');">
-                        <p style="top: -32px">Horror</p>
-                    </div></a>
-
-                    <a href="../MovieRental/main.html?sf">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/sf.png');">
-                        <p style="top: -32px">Science Fiction</p>
-                    </div></a>
+                <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr1.png');">
+                    <div class="releaseRectangeDetails">Movie 1</div>
                 </div>
 
-                <div style="margin-top: -408px; margin-left: 75%;">
-                    <a href="../MovieRental/main.html?comedy">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/comedy.png');">
-                        <p style="top: -32px">Comedy</p>
-                    </div></a>
-
-                    <a href="../MovieRental/main.html?family">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/family.png');">
-                        <p style="top: -32px">Family</p>
-                    </div></a>
-
-                    <a href="../MovieRental/main.html?music">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/music.png');">
-                        <p style="top: -32px">Music</p>
-                    </div></a>
-
-                    <a href="../MovieRental/main.html?thriller">
-                    <div class="categoryBox" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/thriller.png');">
-                        <p style="top: -32px">Thriller</p>
-                    </div></a>
+                <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-left: 50%; margin-top: -260px;">
+                    <div class="releaseRectangeDetails">Movie 2</div>
                 </div>
-            </div>
 
-            <div>
-                <p class="newReleases">New releases</p>
-                <p class="newReleaseDescription">Fresh out the Holywood oven</p>
+                <script src="..\MovieRental\Dependencies\JavaScript\scrollChange.js"></script>
             </div>
-
-            <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr1.png');">
-                <div class="releaseRectangeDetails">Movie 1</div>
-            </div>
-
-            <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-left: 50%; margin-top: -260px;">
-                <div class="releaseRectangeDetails">Movie 2</div>
-            </div>
-
-            <script src="..\MovieRental\Dependencies\JavaScript\scrollChange.js"></script>
         </div>
+
+
+        <div id="tvshows" style="display: none">
+            <div class="line3">
+                <div class="navmenu" id="nrnavmenuid">
+                    <button class="account" id="buttonAccount" onclick="yourAccount()">Your account</button>
+                    <button class="movies active" style="left: 52%; color: black">TV Shows</button>
+                    <button class="movies" style="left: 40%; color: white" id="moviesButton" onclick="switchToMovies()">Movies</button>
+                    <button id="category" class="movies active" style="left: 53%; display: none;">Category</button>
+                </div>  
+
+                <div class="line2" style="color: white;padding-left: 5%;padding-right: 5%; position: fixed; z-index: 4"><hr></div>
+                
+                <div class="youraccount" id="accountButton" style="z-index: 4">
+                    <p style="font-size: 24px; margin-left: 55px;">Your account</p>
+                    <p class="account-fieldName" style="margin-top: 50px">Your personal information</p>
+                    <p class="account-fieldContent">Username: </p>
+                    <p class="account-fieldContent">Email: </p>
+                    <button class="signoutButton">Sign out</button>
+                </div>
+
+                <script src="Dependencies/JavaScript/LogSignIn.js"></script>
+            </div>
+
+        </div>
+
+        <script src="Dependencies/JavaScript/changeData.js"></script>
     </body>
 </html>

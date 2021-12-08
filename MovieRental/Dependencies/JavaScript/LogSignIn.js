@@ -28,8 +28,8 @@ function yourAccount(){
     var accountButton = document.getElementById("accountButton");
     accountButton.style.display = "block";
 
-    var background = document.getElementById("mainBackground");
-    background.style.filter = "blur(10px)";
+    var movies = document.getElementById("moviesLayer");
+    moviesLayer.style.filter = "blur(10px)";
 
     var account = document.getElementById("buttonAccount");
     account.style.background = "white";
@@ -57,8 +57,8 @@ function enableScroll() {
     var accountButton = document.getElementById("accountButton");
     accountButton.style.display = "none";
 
-    var background = document.getElementById("mainBackground");
-    background.style.filter = "blur(0px)";
+    var movies = document.getElementById("moviesLayer");
+    moviesLayer.style.filter = "blur(0px)";
 
     var account = document.getElementById("buttonAccount");
     account.style.background = "transparent";
