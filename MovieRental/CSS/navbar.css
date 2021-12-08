@@ -67,6 +67,12 @@
   right: 5%;
 }
 
+.account:hover{
+  color: black;
+  background-color: white;
+  border: 0px solid transparent;
+} 
+
 .navmenu-left a{
     float:left;
     padding-top: 20px;
@@ -131,4 +137,50 @@ li a {
     font-family: IBMPlexSans-Regular;
     src: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/Fonts/IBMPlexSans-Regular.ttf');
   }
+
+
+.youraccount{
+  width: 260px;
+  height: 310px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.76);
+  color: black;
+  display: none;
+  float: right;
+  font-family: IBMPlexSans-Bold;
+  margin-top: 120px;
+  margin-right: 5%;
+  position: absolute;
+  right: 0%;
+}
+
+.account-fieldName{
+  font-size: 12px;
+  color: rgba(131,128,128,1);
+  margin-left: 20px;
+}
+
+.account-fieldContent{
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.signoutButton{
+  width: 225px;
+  height: 35px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 1px solid rgb(227,60,60);
+  color: black;
+  font-family: IBMPlexSans-Bold;
+  font-size: 14px;
+  margin-top: 70px;
+  margin-left: 17px;
+}
+
+.signoutButton:hover{
+  background-color: rgb(227,60,60);
+  color: white;
+  cursor: pointer;
+}
   
