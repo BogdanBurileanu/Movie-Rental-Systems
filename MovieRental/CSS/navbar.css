@@ -135,7 +135,7 @@ li a {
 
   @font-face {
     font-family: IBMPlexSans-Regular;
-    src: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/Fonts/IBMPlexSans-Regular.ttf');
+    src: url("../Dependencies/Fonts/IBMPlexSans-Regular.ttf");
   }
 
 
