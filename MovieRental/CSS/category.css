@@ -1,0 +1,34 @@
+.categorySubtitles{
+    font-family: IBMPlexSans-Bold;
+    font-size: 30px;
+    color: white;
+    margin-left: 5%;
+    margin-bottom: 30px;
+    position: absolute;
+    margin-top: -250px;
+}
+
+.movieCard {
+    width: 190px;
+    height: 319px;
+    border-radius: 8px;
+    margin-right: 70px;
+    margin-top: -150px;
+}
+
+.movieCardText {
+    font-family: IBMPlexSans-Bold;
+    size: 16px;
+    color: white;
+    bottom: 325px;
+}
+
+.movieCardDiv{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

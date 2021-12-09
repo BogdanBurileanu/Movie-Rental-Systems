@@ -156,6 +156,7 @@
     max-width: 100%;
     position: relative;
     margin: auto;
+    height: 800px;
   }
   
   .dot {
@@ -226,7 +227,7 @@
     margin-top: 140px;
   }
 
-  .categoryBox{
+  .categoryBox_Main{
     width: 242.47px;
     height: 61.45px;
     border-radius: 8px;
@@ -236,6 +237,7 @@
     font-size: 20;
     margin-top: 40px;
     margin-left: 5%;
+    margin-right: 3%;
     text-align: center;
     text-transform: none;
   }

@@ -34,6 +34,12 @@ function yourAccount(){
     var yourAccountButton = document.getElementById("buttonAccount");
     var moviesTButton = document.getElementById("moviesButton");
 
+    var categoryPopup = document.getElementById('categoryPopup');
+    categoryPopup.style.display = "none";
+
+    var categoryArrow = document.getElementById('category');
+    categoryArrow.innerHTML = "Documentary <i class='fas fa-chevron-down' style='margin-left: 5px;'></i>"
+
     if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100 ) {
         yourAccountButton.style.background = "black";
         yourAccountButton.style.color = "white";
@@ -85,9 +91,15 @@ function enableScroll() {
     moviesButton.style.color = "white";
     }
     else{
+
+        var myNav = document.getElementById('navMenu');
+
         account.style.color = "white";
         moviesButton.style.background = "white";
         moviesButton.style.color = "black";
+
+        myNav.classList.add("nav-transparent");
+        myNav.classList.remove("nav-colored");
     }
 
     window.onscroll = function() {};

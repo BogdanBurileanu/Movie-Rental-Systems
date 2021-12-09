@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home - Movie Rentals</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="" type="image/png">
+        <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\nav.css">
+        <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\navbar.css">
+        <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\main.css">
+        <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\category.css">
+        <script src="https://kit.fontawesome.com/7b02bf280d.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body style="background-color: rgb(115,113,97);">
+        <div id="movies">
+            <div class="line3" id="line3">
+                <div class="categoryPopup" id="categoryPopup" style="z-index: 4; position: fixed;">
+                    <div id="categories" style="display: hidden;">
+                        <div style="margin-top: 20px;">
+                            <a href="../MovieRental/cateogory.html?action">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/action.png');">
+                                <p class="categoryText">Action</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?crime">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/crime.png');">
+                                <p class="categoryText">Crime</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?fantasy">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/fantasy.png');">
+                                <p class="categoryText">Fantasy</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?mystery">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/mystery.png');">
+                                <p class="categoryText">Mystery</p>
+                            </div></a>
+                        </div>
+    
+                        <div style="margin-top: -408px; margin-left: 25%;">
+                            <a href="../MovieRental/cateogory.html?adventure">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/adventure.png');">
+                                <p class="categoryText">Adventure</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?documentary">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/documentary.png');">
+                                <p class="categoryText">Documentary</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?history">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/history.png');">
+                                <p class="categoryText">History</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?romance">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/romance.png');">
+                                <p class="categoryText">Romance</p>
+                            </div></a>
+                        </div>
+    
+                        <div style="margin-top: -408px; margin-left: 50%;">
+                            <a href="../MovieRental/cateogory.html?animation">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/animation.png');">
+                                <p class="categoryText">Animation</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?drama">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/drama.png');">
+                                <p class="categoryText">Drama</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?horror">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/horror.png');">
+                                <p class="categoryText">Horror</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?sf">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/sf.png');">
+                                <p class="categoryText">Science Fiction</p>
+                            </div></a>
+                        </div>
+    
+                        <div style="margin-top: -408px; margin-left: 75%;">
+                            <a href="../MovieRental/cateogory.html?comedy">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/comedy.png');">
+                                <p class="categoryText">Comedy</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?family">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/family.png');">
+                                <p class="categoryText">Family</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?music">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/music.png');">
+                                <p class="categoryText">Music</p>
+                            </div></a>
+    
+                            <a href="../MovieRental/cateogory.html?thriller">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/thriller.png');">
+                                <p class="categoryText">Thriller</p>
+                            </div></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navmenu" id="navMenu">
+                    <button class="account" id="buttonAccount" onclick="yourAccount()">Your account</button>
+                    <button class="movies" style="left: 43%" onclick="switchToTVShows()" id="tvshowsButton">TV Shows</button>
+                    <button class="movies" style="left: 30%" id="moviesButton"><a href="main.html" style="margin: -20px; margin-left: 20px;" >Movies</a></button>
+                    <button id="category" class="movies active" style="left: 58%; display: block; color: black" onmouseover="showCategories();" onclick="hideCategories();">Documentary <i class="fas fa-chevron-down" style="margin-left: 5px;"></i></button>
+                    <button class="movies" id="goBack" style="margin-left: 2.7%; font-family: IBMPlexSans-Bold;"><i class='fas fa-chevron-left' style='margin-right: 5px;'></i> Go back</button>
+                </div>  
+
+                <div class="line2" id="delimitator" style="color: white;padding-left: 5%;padding-right: 5%; position: fixed; z-index: 4"><hr></div>
+                <script src="..\MovieRental\Dependencies\JavaScript\scrollChangeCategory.js"></script>
+                
+                <div class="youraccount" id="accountButton" style="z-index: 4; position: fixed;">
+                    <p style="font-size: 24px; margin-left: 55px;">Your account</p>
+                    <p class="account-fieldName" style="margin-top: 50px">Your personal information</p>
+                    <p class="account-fieldContent">Username: </p>
+                    <p class="account-fieldContent">Email: </p>
+                    <button class="signoutButton" onclick="logout()">Sign out</button>
+                </div>
+
+                <script src="Dependencies/JavaScript/categories.js" ></script>
+                <script src="Dependencies/JavaScript/LogSignIn.js" ></script>
+            </div>
+
+            <div id="moviesLayer" onclick="enableScroll()">
+                <div class="container">
+                    <img id = "categoryImage" src="..\MovieRental\Dependencies\ImageAssets\Categories_Main\documentary.jpeg" class="img">
+                    
+                    <p id="categoryTitle" style="font-family: IBMPlexSans-Bold; font-size: 48px; margin-left: 5%; margin-top: -450px; position: absolute">Category Title</p>
+
+                    <p class="categorySubtitles">Movies in this category</p>
+
+                    <div class="movieCardDiv">
+                        <div>
+                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
+                            <p class="movieCardText">Movie 1</p>
+                        </div>
+
+                        <div>
+                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie2.png');"></div>
+                            <p class="movieCardText">Movie 2</p>
+                        </div>
+
+                        <div>
+                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie3.png');"></div>
+                            <p class="movieCardText">Movie 3</p>
+                        </div>
+
+                        <div>
+                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie4.png');"></div>
+                            <p class="movieCardText">Movie 4</p>
+                        </div>
+
+                        <div>
+                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie5.png');"></div>
+                            <p class="movieCardText">Movie 5</p>
+                        </div>
+                    </div>
+
+                    <p class="categorySubtitles" style="margin-top: -50px;">Upcoming movies in this category</p>
+
+                    <div class="movieCardDiv" style="margin-top: 300px;">
+                        <div>
+                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
+                            <p class="movieCardText">Movie 1</p>
+                        </div>
+
+                        <div>
+                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie2.png');"></div>
+                            <p class="movieCardText">Movie 2</p>
+                        </div>
+
+                        <div>
+                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie3.png');"></div>
+                            <p class="movieCardText">Movie 3</p>
+                        </div>
+
+                        <div>
+                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie4.png');"></div>
+                            <p class="movieCardText">Movie 4</p>
+                        </div>
+
+                        <div>
+                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie5.png');"></div>
+                            <p class="movieCardText">Movie 5</p>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+
+        <script src="Dependencies/JavaScript/changeData.js"></script>
+    </body>
+</html>

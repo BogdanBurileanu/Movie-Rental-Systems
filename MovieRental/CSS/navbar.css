@@ -198,4 +198,20 @@ li a {
   color: white;
   cursor: pointer;
 }
+
+.categoryPopup{
+  width: 90%;
+  height: 440px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.76);
+  color: black;
+  display: none;
+  float: right;
+  font-family: IBMPlexSans-Bold;
+  margin-top: 120px;
+  margin-right: 5%;
+  margin-left: 5%;
+  position: absolute;
+  right: 0%;
+}
   
