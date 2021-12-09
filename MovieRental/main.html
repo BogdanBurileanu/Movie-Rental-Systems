@@ -7,22 +7,22 @@
         <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\nav.css">
         <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\navbar.css">
         <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\main.css">
-        <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\footerframe.css">
         
     </head>
     <body>
         <div id="movies">
-            <div class="line3">
-                <div class="navmenu" id="nrnavmenuid">
+            <div class="line3" id="line3">
+                <div class="navmenu" id="navMenu">
                     <button class="account" id="buttonAccount" onclick="yourAccount()">Your account</button>
-                    <button class="movies" style="left: 52%" onclick="switchToTVShows()">TV Shows</button>
+                    <button class="movies" style="left: 52%" onclick="switchToTVShows()" id="tvshowsButton">TV Shows</button>
                     <button class="movies active" style="left: 40%; color: black" id="moviesButton">Movies</button>
                     <button id="category" class="movies active" style="left: 53%; display: none;">Category</button>
                 </div>  
 
-                <div class="line2" style="color: white;padding-left: 5%;padding-right: 5%; position: fixed; z-index: 4"><hr></div>
+                <div class="line2" id="delimitator" style="color: white;padding-left: 5%;padding-right: 5%; position: fixed; z-index: 4"><hr></div>
+                <script src="..\MovieRental\Dependencies\JavaScript\scrollChange.js"></script>
                 
-                <div class="youraccount" id="accountButton" style="z-index: 4">
+                <div class="youraccount" id="accountButton" style="z-index: 4; position: fixed;">
                     <p style="font-size: 24px; margin-left: 55px;">Your account</p>
                     <p class="account-fieldName" style="margin-top: 50px">Your personal information</p>
                     <p class="account-fieldContent">Username: </p>
@@ -198,8 +198,6 @@
                 <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-left: 50%; margin-top: -260px;">
                     <div class="releaseRectangeDetails">Movie 2</div>
                 </div>
-
-                <script src="..\MovieRental\Dependencies\JavaScript\scrollChange.js"></script>
             </div>
         </div>
 

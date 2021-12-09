@@ -31,13 +31,27 @@ function yourAccount(){
     var movies = document.getElementById("moviesLayer");
     moviesLayer.style.filter = "blur(10px)";
 
-    var account = document.getElementById("buttonAccount");
-    account.style.background = "white";
-    account.style.color = "black"
+    var yourAccountButton = document.getElementById("buttonAccount");
+    var moviesTButton = document.getElementById("moviesButton");
 
-    var moviesButton = document.getElementById("moviesButton");
-    moviesButton.style.background = "transparent";
-    moviesButton.style.color = "white";
+    if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100 ) {
+        yourAccountButton.style.background = "black";
+        yourAccountButton.style.color = "white";
+
+        moviesTButton.style.borderRadius = "8px";
+        moviesTButton.style.borderColor = "black";
+        moviesTButton.style.background = "transparent";
+        moviesTButton.style.color = "black";
+    } 
+    else {
+        yourAccountButton.style.background = "black";
+        yourAccountButton.style.color = "white";
+
+        moviesTButton.style.borderRadius = "8px";
+        moviesTButton.style.borderColor = "black";
+        moviesTButton.style.background = "transparent";
+        moviesTButton.style.color = "black";
+    }
 
     disableScroll();
 }
@@ -62,11 +76,19 @@ function enableScroll() {
 
     var account = document.getElementById("buttonAccount");
     account.style.background = "transparent";
-    account.style.color = "white"
 
     var moviesButton = document.getElementById("moviesButton");
-    moviesButton.style.background = "white";
-    moviesButton.style.color = "black";
+
+    if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100 ) {
+        account.style.color = "black";
+        moviesButton.style.background = "black";
+    moviesButton.style.color = "white";
+    }
+    else{
+        account.style.color = "white";
+        moviesButton.style.background = "white";
+        moviesButton.style.color = "black";
+    }
 
     window.onscroll = function() {};
 }
