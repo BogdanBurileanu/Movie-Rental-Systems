@@ -1,6 +1,6 @@
 var myNav = document.getElementById('navMenu');
 
-var moviesButtonTT = document.getElementById('moviesButton');
+var moviesButton = document.getElementById('moviesButtonNav');
 var tvShowsButton = document.getElementById('tvshowsButton');
 var accountButtonT = document.getElementById('buttonAccount');
 var delimitator = document.getElementById('delimitator');
@@ -14,7 +14,7 @@ window.onscroll = function () {
       myNav.classList.remove("nav-transparent");
 
       delimitator.style.display = "none";
-      moviesButtonTT.style.color = "black";
+      moviesButton.style.color = "black";
       categoryButton.style.backgroundColor = "black";
       categoryButton.style.color = "white";
       tvShowsButton.style.color = "black";
@@ -27,7 +27,7 @@ window.onscroll = function () {
       myNav.classList.remove("nav-colored");
 
       delimitator.style.display = "block";
-      moviesButtonTT.style.color = "black";
+      moviesButton.style.color = "white";
       categoryButton.style.backgroundColor = "white";
       categoryButton.style.color = "black";
       tvShowsButton.style.color = "white";

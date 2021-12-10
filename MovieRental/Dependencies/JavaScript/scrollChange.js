@@ -1,6 +1,6 @@
 var myNav = document.getElementById('navMenu');
 
-var moviesButton = document.getElementById('moviesButton');
+var moviesButton = document.getElementById('moviesButtonNav');
 var tvShowsButton = document.getElementById('tvshowsButton');
 var accountButton = document.getElementById('buttonAccount');
 var delimitator = document.getElementById('delimitator');

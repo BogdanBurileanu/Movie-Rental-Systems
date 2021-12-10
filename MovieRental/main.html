@@ -14,9 +14,9 @@
         <div id="movies">
             <div class="line3" id="line3">
                 <div class="navmenu" id="navMenu">
-                    <button class="account" id="buttonAccount" onclick="yourAccount()">Your account</button>
+                    <button class="account" id="buttonAccount" onclick="yourAccount('')">Your account</button>
                     <button class="movies" style="left: 52%" onclick="switchToTVShows()" id="tvshowsButton">TV Shows</button>
-                    <button class="movies active" style="left: 40%; color: black" id="moviesButton">Movies</button>
+                    <button class="movies active" style="left: 40%; color: black" id="moviesButtonNav">Movies</button>
                     <button id="category" class="movies active" style="left: 53%; display: none;">Category</button>
                 </div>  
 
@@ -34,7 +34,7 @@
                 <script src="Dependencies/JavaScript/LogSignIn.js"></script>
             </div>
 
-            <div id="moviesLayer" onclick="enableScroll()">
+            <div id="moviesLayer" onclick="enableScroll('movie')">
                 <div class="container">
                     <div class="slideshow-container" syle="z-index: 2;">
                         <div class="mySlides fade">
@@ -99,88 +99,88 @@
 
                 <div id="categories">
                     <div style="margin-top: 200px;">
-                        <a href="../MovieRental/category.html?action">
+                        <a href="../MovieRental/category.html?Action#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/action.png');">
                             <p class="categoryText">Action</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?crime">
+                        <a href="../MovieRental/category.html?Crime#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/crime.png');">
                             <p class="categoryText">Crime</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?fantasy">
+                        <a href="../MovieRental/category.html?Fantasy#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/fantasy.png');">
                             <p class="categoryText">Fantasy</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?mystery">
+                        <a href="../MovieRental/category.html?Mystery#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/mystery.png');">
                             <p class="categoryText">Mystery</p>
                         </div></a>
                     </div>
 
                     <div style="margin-top: -408px; margin-left: 25%;">
-                        <a href="../MovieRental/category.html?adventure">
+                        <a href="../MovieRental/category.html?Adventure#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/adventure.png');">
                             <p class="categoryText">Adventure</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?documentary">
+                        <a href="../MovieRental/category.html?Documentary#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/documentary.png');">
                             <p class="categoryText">Documentary</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?history">
+                        <a href="../MovieRental/category.html?History#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/history.png');">
                             <p class="categoryText">History</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?romance">
+                        <a href="../MovieRental/category.html?Romance#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/romance.png');">
                             <p class="categoryText">Romance</p>
                         </div></a>
                     </div>
 
                     <div style="margin-top: -408px; margin-left: 50%;">
-                        <a href="../MovieRental/category.html?animation">
+                        <a href="../MovieRental/category.html?Animation#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/animation.png');">
                             <p class="categoryText">Animation</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?drama">
+                        <a href="../MovieRental/category.html?Drama#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/drama.png');">
                             <p class="categoryText">Drama</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?horror">
+                        <a href="../MovieRental/category.html?Horror#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/horror.png');">
                             <p class="categoryText">Horror</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?sf">
+                        <a href="../MovieRental/category.html?SF#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/sf.png');">
                             <p class="categoryText">Science Fiction</p>
                         </div></a>
                     </div>
 
                     <div style="margin-top: -408px; margin-left: 75%;">
-                        <a href="../MovieRental/category.html?comedy">
+                        <a href="../MovieRental/category.html?Comedy#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/comedy.png');">
                             <p class="categoryText">Comedy</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?family">
+                        <a href="../MovieRental/category.html?Family#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/family.png');">
                             <p class="categoryText">Family</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?music">
+                        <a href="../MovieRental/category.html?Music#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/music.png');">
                             <p class="categoryText">Music</p>
                         </div></a>
 
-                        <a href="../MovieRental/category.html?thriller">
+                        <a href="../MovieRental/category.html?Thriller#movies">
                         <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/thriller.png');">
                             <p class="categoryText">Thriller</p>
                         </div></a>
