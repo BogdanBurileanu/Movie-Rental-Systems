@@ -1,7 +1,5 @@
 var myNav = document.getElementById('navMenu');
 
-var moviesButton = document.getElementById('moviesButtonNav');
-var tvShowsButton = document.getElementById('tvshowsButton');
 var accountButton = document.getElementById('buttonAccount');
 var delimitator = document.getElementById('delimitator');
 
@@ -13,20 +11,14 @@ window.onscroll = function () {
       myNav.classList.remove("nav-transparent");
 
       delimitator.style.display = "none";
-      moviesButton.style.backgroundColor = "black";
-      moviesButton.style.color = "white";
-      tvShowsButton.style.color = "black";
-      accountButton.style.color = "black";
-      accountButton.style.borderColor = "black";
+      accountButton.style.color = "white";
+      accountButton.style.borderColor = "white";
   } 
   else {
       myNav.classList.add("nav-transparent");
       myNav.classList.remove("nav-colored");
 
       delimitator.style.display = "block";
-      moviesButton.style.backgroundColor = "white";
-      moviesButton.style.color = "black";
-      tvShowsButton.style.color = "white";
       accountButton.style.color = "white";
       accountButton.style.borderColor = "white";
   }

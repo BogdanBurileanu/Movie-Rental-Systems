@@ -34,7 +34,7 @@
 
 .nav-colored{
   border-radius: 8px;
-  background-color: white;
+  background-color: black;
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
@@ -44,25 +44,18 @@
 
 .movies{
   position: absolute;
-  width: 128px;
-  height: 40px;
   border-radius: 8px;
-  border: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  cursor: pointer;
   background-color: transparent;
   color: white;
   font-family: IBMPlexSans-Regular;
   font-size: 12px;
   top: 10px;
+  z-index: 4;
 }
 
-.movies:active{
-  color: black;
-  background-color: white;
-}
 
 .account{
   position: absolute;
@@ -213,5 +206,70 @@ li a {
   margin-left: 5%;
   position: absolute;
   right: 0%;
+}
+
+.wrapper {
+  margin: 0px 30%;
+}
+.toggle_radio{
+  position: relative;
+  background: transparent;
+  height: 60px;
+  width: 600px;
+}
+.toggle_radio > * {
+  float: left;
+}
+.toggle_radio input[type=radio]{
+  display: none;
+  /*position: fixed;*/
+}
+.toggle_radio label{
+  position: relative;
+  z-index: 1;
+  font-family: IBMPlexSans-Regular;
+  font-size: 14px;
+  color: white;
+  display: block;
+  width: 128px;
+  margin: 8px 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+.toggle_option_slider{
+  width: 128px;
+  height: 40px;
+  top: 11px;
+  position: absolute;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+#first_toggle:checked ~ .toggle_option_slider{
+  position: absolute;
+  z-index: 0;
+  background: white;
+  left: 30px;
+}
+#second_toggle:checked ~ .toggle_option_slider{
+  position: absolute;
+  z-index: 0;
+  background: white;
+  left: 215px;
+}
+#third_toggle:checked ~ .toggle_option_slider{
+  position: absolute;
+  z-index: 0;
+  background: white;
+  left: 405px;
 }
   

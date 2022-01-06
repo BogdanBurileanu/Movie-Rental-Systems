@@ -79,12 +79,12 @@ function enableScroll(pageType) {
     accountButton.style.display = "none";
 
     var movies = document.getElementById("moviesLayer");
-    moviesLayer.style.filter = "blur(0px)";
+    movies.style.filter = "blur(0px)";
 
     var account = document.getElementById("buttonAccount");
     account.style.background = "transparent";
 
-    var moviesButton = document.getElementById("moviesButtonNav");
+    var moviesButton = document.getElementById("firstSwitch");
 
     if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100 ) {
         account.style.color = "black";

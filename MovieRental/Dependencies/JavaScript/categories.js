@@ -1,16 +1,18 @@
 var category = document.getElementById('categoryPopup');
-var categoryArrow = document.getElementById('category');
+var categoryArrow = document.getElementById('thirdSwitch');
 var accountButton = document.getElementById("accountButton");
+
+var currentCategory = "";
 
 function showCategories(){
     category.style.display = "block";
-    categoryArrow.innerHTML = findCategoryURL() + " <i class='fas fa-chevron-up' style='margin-left: 5px;'></i>";
+    categoryArrow.innerHTML = currentCategory + " <i class='fas fa-chevron-up' style='margin-left: 5px;'></i>";
     accountButton.style.display = "none";
 }
 
 function hideCategories(){
     category.style.display = "none";
-    categoryArrow.innerHTML = findCategoryURL() + " <i class='fas fa-chevron-down' style='margin-left: 5px;'></i>";
+    categoryArrow.innerHTML = currentCategory + " <i class='fas fa-chevron-down' style='margin-left: 5px;'></i>";
 
 }
 
@@ -44,7 +46,7 @@ let categories = [
 ] 
 
 var categoryTitle = document.getElementById('categoryTitle');
-var categoryNavButton = document.getElementById('category');
+var categoryNavButton = document.getElementById('thirdSwitch');
 var categoryImage = document.getElementById('categoryImage');
 var categoryBackground = document.getElementById('mainBackground');
 var categoryURL = window.location.href;
@@ -53,23 +55,10 @@ function goBack(){
     var goBackButton = document.getElementById('goBack');
     goBackButton.style.backgroundColor = "transparent";
 
-    var dashIndex = categoryURL.indexOf("#");
-    var source = categoryURL.substr(dashIndex+1);
 
-    window.location.href = 'file:///Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/main.html?' + source;
 }
 
-function findCategoryURL(){
-    var index = categoryURL.indexOf("?") + 1;
-    var dashIndex = categoryURL.indexOf("#");
-    var categoryPath = categoryURL.substring(index, dashIndex);
-
-    return categoryPath;
-}
-
-function findCategoryInArray(){
-    var categoryName = findCategoryURL();
-
+function findCategoryInArray(categoryName){
     for (let index = 0; index < categories.length; index++){
         if (categories[index].categoryName == categoryName){
             return categories[index];
@@ -77,12 +66,28 @@ function findCategoryInArray(){
     }
 }
 
-function updateCategory(index){
-    var category = findCategoryInArray();
+function getCategory(){
+    return show
+}
 
-    categoryTitle.innerHTML = category.categoryName;
-    categoryNavButton.innerHTML = category.categoryName + "<i class='fas fa-chevron-down' style='margin-left: 5px;''>"
-    categoryImage.src = category.introPhoto;
-    categoryBackground.style.backgroundColor = category.backgroundColor;
+function updateCategory(category){
+    var categoryObject = findCategoryInArray(category);
+
+    categoryTitle.innerHTML = categoryObject.categoryName;
+    categoryNavButton.innerHTML = categoryObject.categoryName + "<i class='fas fa-chevron-down' style='margin-left: 5px;''>"
+    categoryImage.src = categoryObject.introPhoto;
+    categoryBackground.style.backgroundColor = categoryObject.backgroundColor;
+
+}
+
+function showCategory(category){
+    switchCounter = 3;
+
+    switchSlider();
+    document.getElementById('third_toggle').checked = true;
+    document.getElementById('wrapper').style.marginLeft = 30 + "%";
+
+    updateCategory(category);
+    currentCategory = category;
 
 }

@@ -24,38 +24,53 @@ var introData = [new Intro("Blade Runner 2049","Mystery, Thriller, Science Ficti
 var slideIndex = 0;
 showSlides();
 
-function move(elem) {   
-  var width = 0;
-  var bars = 0
-  var id = setInterval(frame, 76);
-  function frame() {
-      if (width == 100) {
-      clearInterval(id);
-      } else {
-      width++; 
-      elem.style.width = width + '%'; 
-      }
-  }
-}
-
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var bars = document.getElementsByClassName('myBar');
+  var bars = document.getElementsByClassName('progressBar');
+
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   slideIndex++;
+
   if (slideIndex > slides.length) {slideIndex = 1}    
   slides[slideIndex-1].style.display = "block";
-  //bars[slideIndex-1].style.display = "block";
-  //move(bars[i]);
+  bars[slideIndex-1].style.display = "block";
+  moveProgressBar(bars[slideIndex-1]);
+
   var data = introData[slideIndex-1];
   data.changeIntroData();
   
-  setTimeout(showSlides, 10000); // Change image every 8 seconds
+  setTimeout(showSlides, 10000); // Change image every 10 seconds
 }
 
+function moveProgressBar(elem) {
+  var width = 1;
+  var id = setInterval(frame, 50);
+  function frame() {
+    if (width >= 200) {
+      elem.style.display = "none";
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + 'px';
+    }
+  }
+}
 
+function moveDelimitator() {
+  var elem = document.getElementById("delimitator");   
+  var width = 0;
+  var id = setInterval(frame, 15);
+  function frame() {
+    if (width >= 90) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
 
 

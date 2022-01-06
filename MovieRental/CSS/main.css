@@ -192,19 +192,13 @@
     left: 5%;
   }
 
-  #myProgress {
-    width: 215px;
-    background-color: transparent;
-    position: absolute;
-    bottom: 130px;
-  }
-
-  #myBar{
+  .progressBar{
     width: 0px;
-    height: 2px;
+    height: 3px;
     background-color: white;
-    position: absolute;
-    bottom: 10px;
+    margin-left: 30px;
+    border-radius: 8px;
+    margin-top: -10px;
   }
 
   .categories{
@@ -240,6 +234,7 @@
     margin-right: 3%;
     text-align: center;
     text-transform: none;
+    cursor: pointer;
   }
 
   .categoryText{
