@@ -10,6 +10,7 @@ function switchSlider(){
     var thirdSwitch = document.getElementById('thirdSwitch');
 
     var wrapper = document.getElementById('wrapper');
+    var mainBackground = document.getElementById('mainBackground');
 
 
     if (switchCounter == 1){
@@ -22,6 +23,7 @@ function switchSlider(){
         thirdSwitch.style.display = "none";
 
         wrapper.style.marginLeft = 35 + "%";
+        mainBackground.style.backgroundColor = "black";
     }
     
     if (switchCounter == 2){
@@ -32,6 +34,9 @@ function switchSlider(){
         firstSwitch.style.color = "white";
         secondSwitch.style.color = "black";
         thirdSwitch.style.display = "none";
+
+        mainBackground.style.backgroundColor = "black";
+
     } 
     
     if (switchCounter == 3){
@@ -45,3 +50,29 @@ function switchSlider(){
         thirdSwitch.style.color = "black";
     }
 }
+
+var myNav = document.getElementById('navMenu');
+
+var accountButton = document.getElementById('buttonAccount');
+var delimitator = document.getElementById('delimitator');
+
+
+window.onscroll = function () { 
+  "use strict";
+  if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100 ) {
+      myNav.classList.add("nav-colored");
+      myNav.classList.remove("nav-transparent");
+
+      delimitator.style.display = "none";
+      accountButton.style.color = "white";
+      accountButton.style.borderColor = "white";
+  } 
+  else {
+      myNav.classList.add("nav-transparent");
+      myNav.classList.remove("nav-colored");
+
+      delimitator.style.display = "block";
+      accountButton.style.color = "white";
+      accountButton.style.borderColor = "white";
+  }
+};

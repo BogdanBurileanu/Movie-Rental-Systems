@@ -4,13 +4,19 @@
         <title>Home - Movie Rentals</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="" type="image/png">
-        <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\nav.css">
         <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\navbar.css">
         <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\main.css">
         <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\category.css">
+        <link rel="stylesheet" type="text/css" href="..\MovieRental\CSS\content.css">
         <script src="https://kit.fontawesome.com/7b02bf280d.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="Dependencies/JavaScript/updateData/homepage.js"></script>
     </head>
-    <body id="mainBackground" onload="moveDelimitator();">
+    <body id="mainBackground" onload="moveDelimitator();showSlides();">
+
+        <!------------------------------------- NAV BAR ------------------------------------->
+
         <div class="line3" id="line3">
             <div class="navmenu" id="navMenu">
                 <button class="account" id="buttonAccount" onclick="yourAccount('')">Your account</button>
@@ -19,8 +25,8 @@
                       <input type="radio" checked class="toggle_option" id="first_toggle" name="toggle_option">
                       <input type="radio" class="toggle_option" id="second_toggle" name="toggle_option">
                       <input type="radio" class="toggle_option" id="third_toggle" name="toggle_option">
-                      <label for="first_toggle"><p id="firstSwitch" onclick="switchCounter = 1; moveDelimitator()" style="color: black">Movies</p></label>
-                      <label for="second_toggle"><p id="secondSwitch" onclick="switchCounter = 2; moveDelimitator()">TV Shows</p></label>
+                      <label for="first_toggle"><p id="firstSwitch" onclick="switchCounter = 1; moveDelimitator(); disableContentLayer();" style="color: black">Movies</p></label>
+                      <label for="second_toggle"><p id="secondSwitch" onclick="switchCounter = 2; moveDelimitator(); disableContentLayer();">TV Shows</p></label>
                       <label for="third_toggle"><p id="thirdSwitch" onclick="switchCounter = 3; moveDelimitator(); hideCategories();" onmouseover="showCategories();" style="display: none;"><i class="fas fa-chevron-down" style="margin-left: 5px;"></i></p></label>
                       <div class="toggle_option_slider"> 
                       </div>
@@ -28,7 +34,6 @@
             </div>  
 
             <div id="delimitator" style="background-color: white;margin-left: 5%; margin-top: 10px; position: fixed; height:2px;width:0;"></div>
-            <script src="..\MovieRental\Dependencies\JavaScript\scrollChange.js"></script>
             
             <div class="youraccount" id="accountButton" style="z-index: 4; position: fixed;">
                 <p style="font-size: 24px; margin-left: 55px;">Your account</p>
@@ -40,306 +45,602 @@
 
             <script src="Dependencies/JavaScript/LogSignIn.js"></script>
         </div>
+        
+        <!------------------------------------- MOVIES PAGE -------------------------------------------->
+        <div id="contentUnderlayer">
+            <div id="moviesLayer" onclick="//enableScroll('movie')">
+                <div class="container">
+                    <div class="slideshow-container" id="slideShowContainer">
+                        <div class="mySlides fade">
+                            <iframe class="introVideo" width="1500" height="1000" src="https://www.youtube-nocookie.com/embed/gCcx85zbxz4?controls=0&autoplay=1&mute=1&loop=1&amp;start=58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>  
+                            <img class="introImage img" src="..\MovieRental\Dependencies\ImageAssets\Background.png">    
+                        </div>
+                        <div class="mySlides fade">
+                            <iframe class="introVideo" width="1500" height="1000" src="https://www.youtube-nocookie.com/embed/G8tlEcnrGnU?controls=0&autoplay=1&mute=1&loop=1&amp;start=32" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <img class="introImage img" src="..\MovieRental\Dependencies\ImageAssets\Paris,Texas.jpeg">
+                        </div>
+                        <div class="mySlides fade">
+                            <iframe class="introVideo" width="1500" height="1000" src="https://www.youtube-nocookie.com/embed/JQoqsKoJVDw?controls=0&autoplay=1&mute=1&loop=1&amp;start=27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <img class="introImage img" src="..\MovieRental\Dependencies\ImageAssets\slideshow3.png">
+                        </div>
+                        <div class="mySlides fade">
+                            <iframe class="introVideo" width="1500" height="1000" src="https://www.youtube-nocookie.com/embed/uJOzvkh659g?controls=0&autoplay=1&mute=1&loop=1&amp;start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <img class="introImage img" src="..\MovieRental\Dependencies\ImageAssets\Hell_or_High_Water.jpeg">
+                        </div>
+                    </div>
 
-        <div id="moviesLayer" onclick="//enableScroll('movie')">
-            <div class="container">
-                <div class="slideshow-container">
-                    <div class="mySlides fade">
-                    <img src="..\MovieRental\Dependencies\ImageAssets\Background.png" class="img">
-                    </div>
-                    <div class="mySlides fade">
-                    <img src="..\MovieRental\Dependencies\ImageAssets\Paris,Texas.jpeg" class="img">
-                    </div>
-                    <div class="mySlides fade">
-                    <img src="..\MovieRental\Dependencies\ImageAssets\slideshow3.png" class="img">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="..\MovieRental\Dependencies\ImageAssets\Hell_or_High_Water.jpeg" class="img">
-                    </div>
-                </div>
-
-                <div>
-                    <div class = "introSuggestions" style="margin-left: 5%"> 
-                        <img src="..\MovieRental\Dependencies\ImageAssets\slideshow1.png" class="img introSuggestions">
-                        <div class="progressBar" id="bar"></div>
-                    </div>
-                    <div class = "introSuggestions" style="margin-left: 25%"> 
-                        <img src="..\MovieRental\Dependencies\ImageAssets\slideshow2.png" class="img introSuggestions">
-                        <div class="progressBar" id="bar"></div>
-                    </div>
-                    <div class = "introSuggestions" style="margin-left: 45%"> 
-                        <img src="..\MovieRental\Dependencies\ImageAssets\slideshow3.png" class="img introSuggestions">
-                        <div class="progressBar" id="bar"></div>
-                    </div>
-                    <div class = "introSuggestions" style="margin-left: 65%"> 
-                        <img src="..\MovieRental\Dependencies\ImageAssets\Background.png" class="img introSuggestions">
-                        <div class="progressBar" id="bar"></div>
-                    </div>
-                </div>
-
-                <div>
                     <div>
-                        <div class="line4"><p id="introTitle" style="font-size:64px;"></p></div>
-                        <div class="line5"><p id="introGenre"></p></div><br>
-                        <div class="line6"><p id="introDirector"></p></div><br>
-                        <div class="line7"><p id="introOther"></p></div><br>
-                        <div class="line8"><button id="introLink" class="buttonmain button10 animate">WATCH NOW</button></div>
+                        <div class="introSuggestions" style="margin-left: 5%"> 
+                            <img class="img introSuggestions" src="..\MovieRental\Dependencies\ImageAssets\slideshow1.png" onclick="contentLayer(0);">
+                            <div class="progressBar" id="bar"></div>
+                        </div>
+                        <div class = "introSuggestions" style="margin-left: 25%"> 
+                            <img class="img introSuggestions" src="..\MovieRental\Dependencies\ImageAssets\slideshow2.png" onclick="contentLayer(1);">
+                            <div class="progressBar" id="bar"></div>
+                        </div>
+                        <div class = "introSuggestions" style="margin-left: 45%"> 
+                            <img class="img introSuggestions" src="..\MovieRental\Dependencies\ImageAssets\slideshow3.png" onclick="contentLayer(2);">
+                            <div class="progressBar" id="bar"></div>
+                        </div>
+                        <div class = "introSuggestions" style="margin-left: 65%"> 
+                            <img class="introSuggestions" src="..\MovieRental\Dependencies\ImageAssets\Background.png" onclick="contentLayer(3);">
+                            <div class="progressBar" id="bar"></div>
+                        </div>
                     </div>
 
-                    <div id="cateogories "class="line9" style="z-index: 1;">
-                        <div class="timelineCircle"></div>
-                        <div class="timelineSectionText" style="left: -70px; top: 3px;">Categories</div>
-                        <div class="timelineVerticalLine" style="left: 12px;top:24px"></div>
-                        <div class="timelineCircle" style="top: 124px"></div>
-                        <div class="timelineSectionText" style="left: -70px; top: 127px;">New Releases</div>
-                        <div class="timelineVerticalLine" style="left: 12px;top:148px"></div>
-                        <div class="timelineCircle" style="top: 248px"></div>
-                        <div class="timelineSectionText" style="left: -70px; top: 245px;">Upcoming Releases</div>
-                    </div>
-                </div>
-            </div>
+                    <div>
+                        <div>
+                            <div class="line4"><p id="introTitle" style="font-size:64px;"></p></div>
+                            <div class="line5"><p id="introGenre"></p></div><br>
+                            <div class="line6"><p id="introDirector"></p></div><br>
+                            <div class="line7"><p id="introOther"></p></div><br>
+                            <div class="line8"><button id="introLink" class="buttonmain button10 animate" onclick="watchNowButtonMainPressed();">WATCH NOW</button></div>
+                        </div>
 
-            <script src="..\MovieRental\Dependencies\JavaScript\slideshowgallery.js"></script>
-
-            <p class="categories">Categories</p>
-            <p class="categoriesDescription">Are we feeling romantic today?</p>
-
-            <div id="categories">
-                <div style="margin-top: 200px;">
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/action.png');" onclick="showCategory('Action')">
-                        <p class="categoryText">Action</p>
-                    </div>
-
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/crime.png');" onclick="showCategory('Crime')">
-                        <p class="categoryText">Crime</p>
-                    </div>
-
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/fantasy.png');" onclick="showCategory('Fantasy')">
-                        <p class="categoryText">Fantasy</p>
-                    </div>
-
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/mystery.png');" onclick="showCategory('Mystery')">
-                        <p class="categoryText">Mystery</p>
+                        <div id="cateogories "class="line9" style="z-index: 0;">
+                            <div class="timelineCircle"></div>
+                            <div class="timelineSectionText" style="left: -70px; top: 3px;">Categories</div>
+                            <div class="timelineVerticalLine" style="left: 12px;top:24px"></div>
+                            <div class="timelineCircle" style="top: 124px"></div>
+                            <div class="timelineSectionText" style="left: -70px; top: 127px;">New Releases</div>
+                            <div class="timelineVerticalLine" style="left: 12px;top:148px"></div>
+                            <div class="timelineCircle" style="top: 248px"></div>
+                            <div class="timelineSectionText" style="left: -70px; top: 245px;">Upcoming Releases</div>
+                        </div>
                     </div>
                 </div>
 
-                <div style="margin-top: -408px; margin-left: 25%;">
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/adventure.png');" onclick="showCategory('Adventure')">
-                        <p class="categoryText">Adventure</p>
-                    </div>
+                <script src="..\MovieRental\Dependencies\JavaScript\slideshowgallery.js"></script>
 
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/documentary.png');" onclick="showCategory('Documentary')">
-                        <p class="categoryText">Documentary</p>
-                    </div>
+                <p class="categories">Categories</p>
+                <p class="categoriesDescription">Are we feeling romantic today?</p>
 
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/history.png');" onclick="showCategory('History')">
-                        <p class="categoryText">History</p>
-                    </div>
-
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/romance.png');" onclick="showCategory('Romance')">
-                        <p class="categoryText">Romance</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: -408px; margin-left: 50%;">
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/animation.png');" onclick="showCategory('Animation')">
-                        <p class="categoryText">Animation</p>
-                    </div>
-
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/drama.png');" onclick="showCategory('Drama')">
-                        <p class="categoryText">Drama</p>
-                    </div>
-
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/horror.png');" onclick="showCategory('Horror')">
-                        <p class="categoryText">Horror</p>
-                    </div>
-
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/sf.png');" onclick="showCategory('SF')"> 
-                        <p class="categoryText">Science Fiction</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: -408px; margin-left: 75%;">
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/comedy.png');" onclick="showCategory('Comedy')">
-                        <p class="categoryText">Comedy</p>
-                    </div>
-
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/family.png');" onclick="showCategory('Family')">
-                        <p class="categoryText">Family</p>
-                    </div>
-
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/music.png');" onclick="showCategory('Music')">
-                        <p class="categoryText">Music</p>
-                    </div>
-
-                    <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/thriller.png');" onclick="showCategory('Thriller')">
-                        <p class="categoryText">Thriller</p>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <p class="newReleases">New releases</p>
-                <p class="newReleaseDescription">Fresh out the Holywood oven</p>
-            </div>
-
-            <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr1.png');">
-                <div class="releaseRectangeDetails">Movie 1</div>
-            </div>
-
-            <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-left: 50%; margin-top: -260px;">
-                <div class="releaseRectangeDetails">Movie 2</div>
-            </div>
-        </div>
-
-
-        <div id="tvshowsLayer" style="display: none">
-        </div>
-
-        <div id="categoriesLayer" style="display: none">
-            <div class="categoryPopup" id="categoryPopup" style="z-index: 4; position: fixed;">
-                <div id="categories" style="display: hidden;">
-                    <div style="margin-top: 20px;">
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/action.png');" onclick="showCategory('Action');">
+                <div id="categories">
+                    <div style="margin-top: 200px;">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/action.png');" onclick="showCategory('Action')">
                             <p class="categoryText">Action</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/crime.png');" onclick="showCategory('Crime');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/crime.png');" onclick="showCategory('Crime')">
                             <p class="categoryText">Crime</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/fantasy.png');" onclick="showCategory('Fantasy');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/fantasy.png');" onclick="showCategory('Fantasy')">
                             <p class="categoryText">Fantasy</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/mystery.png');" onclick="showCategory('Mystery');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/mystery.png');" onclick="showCategory('Mystery')">
                             <p class="categoryText">Mystery</p>
                         </div>
                     </div>
 
                     <div style="margin-top: -408px; margin-left: 25%;">
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/adventure.png');" onclick="showCategory('Adventure');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/adventure.png');" onclick="showCategory('Adventure')">
                             <p class="categoryText">Adventure</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/documentary.png');" onclick="showCategory('Documentary');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/documentary.png');" onclick="showCategory('Documentary')">
                             <p class="categoryText">Documentary</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/history.png');" onclick="showCategory('History');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/history.png');" onclick="showCategory('History')">
                             <p class="categoryText">History</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/romance.png');" onclick="showCategory('Romance');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/romance.png');" onclick="showCategory('Romance')">
                             <p class="categoryText">Romance</p>
                         </div>
                     </div>
 
                     <div style="margin-top: -408px; margin-left: 50%;">
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/animation.png');" onclick="showCategory('Animation');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/animation.png');" onclick="showCategory('Animation')">
                             <p class="categoryText">Animation</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/drama.png');" onclick="showCategory('Drama');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/drama.png');" onclick="showCategory('Drama')">
                             <p class="categoryText">Drama</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/horror.png');" onclick="showCategory('Horror');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/horror.png');" onclick="showCategory('Horror')">
                             <p class="categoryText">Horror</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/sf.png');" onclick="showCategory('SF');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/sf.png');" onclick="showCategory('SF')"> 
                             <p class="categoryText">Science Fiction</p>
                         </div>
                     </div>
 
                     <div style="margin-top: -408px; margin-left: 75%;">
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/comedy.png');" onclick="showCategory('Comedy');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/comedy.png');" onclick="showCategory('Comedy')">
                             <p class="categoryText">Comedy</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/family.png');" onclick="showCategory('Family');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/family.png');" onclick="showCategory('Family')">
                             <p class="categoryText">Family</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/music.png');" onclick="showCategory('Music');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/music.png');" onclick="showCategory('Music')">
                             <p class="categoryText">Music</p>
                         </div>
 
-                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/thriller.png');" onclick="showCategory('Thriller');">
+                        <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/thriller.png');" onclick="showCategory('Thriller')">
                             <p class="categoryText">Thriller</p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="moviesLayer" onclick="enableScroll('categories')">
-                <div class="container">
-                    <img id = "categoryImage" src="..\MovieRental\Dependencies\ImageAssets\Categories_Main\documentary.jpeg" class="img" >
-                    
-                    <p id="categoryTitle" style="font-family: IBMPlexSans-Bold; font-size: 48px; margin-left: 5%; margin-top: -450px; position: absolute">Category Title</p>
-    
-                    <p class="categorySubtitles">Movies in this category</p>
-    
-                    <div class="movieCardDiv">
-                        <div>
-                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
-                            <p class="movieCardText">Movie 1</p>
-                        </div>
-    
-                        <div>
-                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie2.png');"></div>
-                            <p class="movieCardText">Movie 2</p>
-                        </div>
-    
-                        <div>
-                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie3.png');"></div>
-                            <p class="movieCardText">Movie 3</p>
-                        </div>
-    
-                        <div>
-                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie4.png');"></div>
-                            <p class="movieCardText">Movie 4</p>
-                        </div>
-    
-                        <div>
-                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie5.png');"></div>
-                            <p class="movieCardText">Movie 5</p>
-                        </div>
+                <div>
+                    <p class="categorySubtitles" style="margin-top: 4%;">New releases</p>hi</p>
+                    <p class="newReleaseDescription" style="margin-top: 5%;">Fresh out the Holywood oven</p>
+                
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr1.png');" onclick="contentLayer();">
+                        <div class="releaseRectangleDetails">Movie 1</div>
                     </div>
-    
-                    <p class="categorySubtitles" style="margin-top: -50px;">Upcoming movies in this category</p>
-    
-                    <div class="movieCardDiv" style="margin-top: 300px;">
-                        <div>
-                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
-                            <p class="movieCardText">Movie 1</p>
-                        </div>
-    
-                        <div>
-                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie2.png');"></div>
-                            <p class="movieCardText">Movie 2</p>
-                        </div>
-    
-                        <div>
-                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie3.png');"></div>
-                            <p class="movieCardText">Movie 3</p>
-                        </div>
-    
-                        <div>
-                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie4.png');"></div>
-                            <p class="movieCardText">Movie 4</p>
-                        </div>
-    
-                        <div>
-                            <div class="movieCard" style="background-image: url('/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie5.png');"></div>
-                            <p class="movieCardText">Movie 5</p>
-                        </div>
+
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-left: 35%; margin-top: -260px;" onclick="newReleasesPressed(1);">
+                        <div class="releaseRectangleDetails" style="margin-left: 32%;">Movie 2</div>
+                    </div>
+
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-left: 65%; margin-top: -260px;" onclick="newReleasesPressed(2);">
+                        <div class="releaseRectangleDetails" style="margin-left: 63%;">Movie 2</div>
+                    </div>
+
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-top: 40px;" onclick="newReleasesPressed(3);">
+                        <div class="releaseRectangleDetails" >Movie 2</div>
+                    </div>
+
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-top: -263px; margin-left: 35%;" onclick="newReleasesPressed(4);">
+                        <div class="releaseRectangleDetails" style="margin-left: 32%;">Movie 2</div>
+                    </div>
+
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-top: -263px; margin-left: 65%;" onclick="newReleasesPressed(5);">
+                        <div class="releaseRectangleDetails" style="margin-left: 63%;">Movie 2</div>
+                    </div>
+                </div>
+
+                <div class="movieCardDiv" style="margin-top: 250px; margin-left: 110px;">
+                    <p class="categorySubtitles" style="margin-left: -78%; margin-top: -41%;">Hot right now</p>
+                    <div onclick="hotRightNowPressed(0);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 1</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(1);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie2.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 2</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(2);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie3.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 3</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(3);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie4.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 4</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(4);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie5.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 5</p>
+                    </div>
+                </div>
+
+                <div class="movieCardDiv" style="margin-top: 250px; margin-left: 110px;">
+                    <p class="categorySubtitles" style="margin-left: -78%; margin-top: -41%;"></p>
+                    <div onclick="hotRightNowPressed(5);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 1</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(6);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie2.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 2</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(7);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie3.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 3</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(8);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie4.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 4</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(9);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie5.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 5</p>
                     </div>
                 </div>
             </div>
-            <script src="Dependencies/JavaScript/categories.js" ></script>
+
+            <!------------------------------------- TVSHOWS PAGE ------------------------------------->
+
+            <div id="tvshowsLayer" style="display: none">
+                <div class="container">
+                    <div class="slideshow-container" id="slideShowContainer">
+                        <div class="mySlides fade">
+                            <iframe class="introVideo" width="1500" height="1000" src="https://www.youtube-nocookie.com/embed/gCcx85zbxz4?controls=0&autoplay=0&mute=1&loop=1&amp;start=58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>  
+                            <img class="introImage img" src="..\MovieRental\Dependencies\ImageAssets\Background.png">    
+                        </div>
+                        <div class="mySlides fade">
+                            <iframe class="introVideo" width="1500" height="1000" src="https://www.youtube-nocookie.com/embed/G8tlEcnrGnU?controls=0&autoplay=0&mute=1&loop=1&amp;start=32" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <img class="introImage img" src="..\MovieRental\Dependencies\ImageAssets\Paris,Texas.jpeg">
+                        </div>
+                        <div class="mySlides fade">
+                            <iframe class="introVideo" width="1500" height="1000" src="https://www.youtube-nocookie.com/embed/JQoqsKoJVDw?controls=0&autoplay=0&mute=1&loop=1&amp;start=27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <img class="introImage img" src="..\MovieRental\Dependencies\ImageAssets\slideshow3.png">
+                        </div>
+                        <div class="mySlides fade">
+                            <iframe class="introVideo" width="1500" height="1000" src="https://www.youtube-nocookie.com/embed/uJOzvkh659g?controls=0&autoplay=0&mute=1&loop=1&amp;start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <img class="introImage img" src="..\MovieRental\Dependencies\ImageAssets\Hell_or_High_Water.jpeg">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="introSuggestions" style="margin-left: 5%"> 
+                            <img class="img introSuggestions" src="..\MovieRental\Dependencies\ImageAssets\slideshow1.png" onclick="contentLayer(0);">
+                            <div class="progressBar" id="bar"></div>
+                        </div>
+                        <div class = "introSuggestions" style="margin-left: 25%"> 
+                            <img class="img introSuggestions" src="..\MovieRental\Dependencies\ImageAssets\slideshow2.png" onclick="contentLayer(1);">
+                            <div class="progressBar" id="bar"></div>
+                        </div>
+                        <div class = "introSuggestions" style="margin-left: 45%"> 
+                            <img class="img introSuggestions" src="..\MovieRental\Dependencies\ImageAssets\slideshow3.png" onclick="contentLayer(2);">
+                            <div class="progressBar" id="bar"></div>
+                        </div>
+                        <div class = "introSuggestions" style="margin-left: 65%"> 
+                            <img class="introSuggestions" src="..\MovieRental\Dependencies\ImageAssets\Background.png" onclick="contentLayer(3);">
+                            <div class="progressBar" id="bar"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <div class="line4"><p id="introTitle" style="font-size:64px;"></p></div>
+                            <div class="line5"><p id="introGenre"></p></div><br>
+                            <div class="line6"><p id="introDirector"></p></div><br>
+                            <div class="line7"><p id="introOther"></p></div><br>
+                            <div class="line8"><button id="introLink" class="buttonmain button10 animate" onclick="watchNowButtonMainPressed();">WATCH NOW</button></div>
+                        </div>
+
+                        <div id="cateogories "class="line9" style="z-index: 0;">
+                            <div class="timelineCircle"></div>
+                            <div class="timelineSectionText" style="left: -70px; top: 3px;">Categories</div>
+                            <div class="timelineVerticalLine" style="left: 12px;top:24px"></div>
+                            <div class="timelineCircle" style="top: 124px"></div>
+                            <div class="timelineSectionText" style="left: -70px; top: 127px;">New Releases</div>
+                            <div class="timelineVerticalLine" style="left: 12px;top:148px"></div>
+                            <div class="timelineCircle" style="top: 248px"></div>
+                            <div class="timelineSectionText" style="left: -70px; top: 245px;">Upcoming Releases</div>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="..\MovieRental\Dependencies\JavaScript\slideshowgallery.js"></script>
+
+                <div>
+                    <p class="categorySubtitles" style="margin-top: 4%;">New releases</p>hi</p>
+                    <p class="newReleaseDescription" style="margin-top: 5%;">Fresh out the Holywood oven</p>
+                
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr1.png');" onclick="contentLayer();">
+                        <div class="releaseRectangleDetails">Movie 1</div>
+                    </div>
+
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-left: 35%; margin-top: -260px;" onclick="newReleasesPressed(1);">
+                        <div class="releaseRectangleDetails" style="margin-left: 32%;">Movie 2</div>
+                    </div>
+
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-left: 65%; margin-top: -260px;" onclick="newReleasesPressed(2);">
+                        <div class="releaseRectangleDetails" style="margin-left: 63%;">Movie 2</div>
+                    </div>
+
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-top: 40px;" onclick="newReleasesPressed(3);">
+                        <div class="releaseRectangleDetails" >Movie 2</div>
+                    </div>
+
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-top: -263px; margin-left: 35%;" onclick="newReleasesPressed(4);">
+                        <div class="releaseRectangleDetails" style="margin-left: 32%;">Movie 2</div>
+                    </div>
+
+                    <div class="releaseRectange" style="background-image: url('../MovieRental/Dependencies/ImageAssets/NewReleases/nr2.png'); margin-top: -263px; margin-left: 65%;" onclick="newReleasesPressed(5);">
+                        <div class="releaseRectangleDetails" style="margin-left: 63%;">Movie 2</div>
+                    </div>
+                </div>
+
+                <div class="movieCardDiv" style="margin-top: 250px; margin-left: 110px;">
+                    <p class="categorySubtitles" style="margin-left: -78%; margin-top: -41%;">Hot right now</p>
+                    <div onclick="hotRightNowPressed(0);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 1</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(1);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie2.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 2</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(2);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie3.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 3</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(3);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie4.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 4</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(4);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie5.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 5</p>
+                    </div>
+                </div>
+
+                <div class="movieCardDiv" style="margin-top: 250px; margin-left: 110px;">
+                    <p class="categorySubtitles" style="margin-left: -78%; margin-top: -41%;"></p>
+                    <div onclick="hotRightNowPressed(5);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 1</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(6);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie2.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 2</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(7);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie3.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 3</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(8);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie4.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 4</p>
+                    </div>
+
+                    <div onclick="hotRightNowPressed(9);">
+                        <div class="movieCard hotRightNowImage" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie5.png');"></div>
+                        <p class="movieCardText hotRightNowTitle">Movie 5</p>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------------------- CATEGORIES PAGE ------------------------------------->
+
+            <div id="categoriesLayer" style="display: none">
+                <div class="categoryPopup" id="categoryPopup" style="z-index: 4; position: fixed;">
+                    <div id="categories" style="display: hidden;">
+                        <div style="margin-top: 20px;">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/action.png');" onclick="showCategory('Action');">
+                                <p class="categoryText">Action</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/crime.png');" onclick="showCategory('Crime');">
+                                <p class="categoryText">Crime</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/fantasy.png');" onclick="showCategory('Fantasy');">
+                                <p class="categoryText">Fantasy</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/mystery.png');" onclick="showCategory('Mystery');">
+                                <p class="categoryText">Mystery</p>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: -408px; margin-left: 25%;">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/adventure.png');" onclick="showCategory('Adventure');">
+                                <p class="categoryText">Adventure</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/documentary.png');" onclick="showCategory('Documentary');">
+                                <p class="categoryText">Documentary</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/history.png');" onclick="showCategory('History');">
+                                <p class="categoryText">History</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/romance.png');" onclick="showCategory('Romance');">
+                                <p class="categoryText">Romance</p>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: -408px; margin-left: 50%;">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/animation.png');" onclick="showCategory('Animation');">
+                                <p class="categoryText">Animation</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/drama.png');" onclick="showCategory('Drama');">
+                                <p class="categoryText">Drama</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/horror.png');" onclick="showCategory('Horror');">
+                                <p class="categoryText">Horror</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/sf.png');" onclick="showCategory('SF');">
+                                <p class="categoryText">Science Fiction</p>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: -408px; margin-left: 75%;">
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/comedy.png');" onclick="showCategory('Comedy');">
+                                <p class="categoryText">Comedy</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/family.png');" onclick="showCategory('Family');">
+                                <p class="categoryText">Family</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/music.png');" onclick="showCategory('Music');">
+                                <p class="categoryText">Music</p>
+                            </div>
+
+                            <div class="categoryBox_Main" style="background-image: url('../MovieRental/Dependencies/ImageAssets/Categories/thriller.png');" onclick="showCategory('Thriller');">
+                                <p class="categoryText">Thriller</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="moviesLayer" onclick="enableScroll('categories')">
+                    <div class="container">
+                        <img id = "categoryImage" src="..\MovieRental\Dependencies\ImageAssets\Categories_Main\documentary.jpeg" class="img" >
+                        
+                        <p id="categoryTitle" style="font-family: IBMPlexSans-Bold; font-size: 48px; margin-left: 5%; margin-top: -450px; position: absolute">Category Title</p>
+        
+                        <p class="categorySubtitles">Movies in this category</p>
+        
+                        <div class="movieCardDiv">
+                            <div>
+                                <div class="movieCard" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
+                                <p class="movieCardText">Movie 1</p>
+                            </div>
+        
+                            <div>
+                                <div class="movieCard" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie2.png');"></div>
+                                <p class="movieCardText">Movie 2</p>
+                            </div>
+        
+                            <div>
+                                <div class="movieCard" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie3.png');"></div>
+                                <p class="movieCardText">Movie 3</p>
+                            </div>
+        
+                            <div>
+                                <div class="movieCard" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie4.png');"></div>
+                                <p class="movieCardText">Movie 4</p>
+                            </div>
+        
+                            <div>
+                                <div class="movieCard" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie5.png');"></div>
+                                <p class="movieCardText">Movie 5</p>
+                            </div>
+                        </div>
+        
+                        <p class="categorySubtitles" style="margin-top: -50px;">Upcoming movies in this category</p>
+        
+                        <div class="movieCardDiv" style="margin-top: 300px;">
+                            <div>
+                                <div class="movieCard" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
+                                <p class="movieCardText">Movie 1</p>
+                            </div>
+        
+                            <div>
+                                <div class="movieCard" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie2.png');"></div>
+                                <p class="movieCardText">Movie 2</p>
+                            </div>
+        
+                            <div>
+                                <div class="movieCard" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie3.png');"></div>
+                                <p class="movieCardText">Movie 3</p>
+                            </div>
+        
+                            <div>
+                                <div class="movieCard" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie4.png');"></div>
+                                <p class="movieCardText">Movie 4</p>
+                            </div>
+        
+                            <div>
+                                <div class="movieCard" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie5.png');"></div>
+                                <p class="movieCardText">Movie 5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="Dependencies/JavaScript/updateData/categories.js" ></script>
+            </div>
         </div>
-        <script src="Dependencies/JavaScript/changeData.js"></script>
+
+        <!------------------------------------- MOVIE/TVSHOW PAGE ------------------------------------->
+        <div id="contentPage">
+            <div class=purchaseContentBox id="contentBox">
+                <lottie-player id="lottieAnimation" src="https://assets2.lottiefiles.com/packages/lf20_6al6zf52.json"  background="transparent"  speed="0.4"  style="display: none; width: 80px; height: 80px; margin-top: 0px; margin-left: 47%;" autoplay></lottie-player>
+                <div id="insideContentBox">
+                    <p class="purchaseTitle">Purchase</p>
+                    <p class="purchaseSubtitle">Harry Potter and the Deathly Hallows: Part 2</p>
+                    <div class="purchaseButton" onclick="buyPurchase()"><p style="margin-top: 15px; margin-left: 46px;">Buy</p></div>
+                    <div class="cancelButton" onclick="hidePurchaseBox()"><p style="margin-top: 15px; margin-left: 36px;">Cancel</p></div>
+                </div>
+            </div>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                <div class="modal-body">
+                    <div class="contentLayer" id="contentLayer">
+                        <div class="movieTrailer">
+                            <div class="exitButton" id="exitButton" onclick="disableContentLayer();"></div>
+                            <iframe id="movieTVTrailer" style="border-radius: 24px;" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/5NYt1qirBWg?controls=0&autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <img id="movieTVImage" style="border-radius: 24px; width: 100%; height: 100%" src="..\MovieRental\Dependencies\ImageAssets\Background.png">
+                        </div>
+                        <div>
+                            <div id="movieTVPoster" class="moviePoster" style="background-image: url('../MovieRental/Dependencies/ImageAssets/MovieCardSamples/movie1.png');"></div>
+                            <div style="margin-top: 20px;">
+                                <h1 id="movieTVTitle" class="movieTitle">Harry Potter and the Deathly Hallows: Part 2</h1>
+                                <p id="movieTVShortDescription" class="movieQuickDescription"> Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.</p>
+                                <p id="movieTVAbout" class="genreAndTime">130 minutes    Drama</p>
+                                <button class="buttonmain button10 animate" onclick="purchaseContent();" style="margin-left: 28%; margin-top: 10px; color: black;">WATCH NOW</button>
+                            </div>
+                            <p id="movieTVDescription" class="movieDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget rutrum sem. Vivamus luctus mi quis consequat volutpat. Nullam et massa vulputate, ornare diam nec, aliquet felis. Proin eget imperdiet justo, eu ornare velit. Donec dictum facilisis ornare. Aenean molestie sit amet nisl vel pharetra. Morbi erat mi, posuere a sodales a, interdum a metus. Duis tincidunt commodo bibendum. Aenean dignissim luctus dolor, rutrum tempor dui laoreet non. Sed in feugiat velit. Vestibulum congue nulla at leo sodales, eu ornare turpis laoreet.
+            
+                                Aliquam a felis vitae arcu viverra faucibus. Cras sed diam eu enim egestas laoreet eget ut dui. Vestibulum nec ex ut sem eleifend ultrices. Ut aliquam, magna quis ultrices rhoncus, libero sapien dapibus orci, in rhoncus leo massa a lectus. Phasellus ac est euismod ex tincidunt faucibus eu consectetur nunc. Etiam et faucibus ipsum. Aliquam ullamcorper fermentum felis, accumsan eleifend nibh viverra non. Sed consequat ut turpis non sodales.
+                                
+                                Suspendisse tincidunt, massa quis auctor efficitur, odio massa accumsan orci, at finibus dui sapien in turpis. Aenean non porta velit. Morbi pharetra varius ullamcorper. Vestibulum congue libero a ultricies eleifend. Maecenas quam libero, bibendum pulvinar lacus congue, commodo accumsan massa. Quisque vel tempor justo, eget tincidunt mauris. In id bibendum orci.
+                                
+                                Maecenas sit amet accumsan justo. Morbi et fringilla elit. Etiam eget ante risus. Cras purus lectus, cursus quis efficitur eu, aliquet quis purus. Phasellus ut dui vel risus tincidunt tristique. Praesent cursus posuere magna, ac ullamcorper enim facilisis a. Integer venenatis condimentum mauris, in aliquam arcu vestibulum eget. Mauris diam risus, aliquam laoreet diam nec, efficitur pulvinar neque. Morbi accumsan magna eget ipsum fringilla varius. Aenean purus urna, pretium quis tellus quis, commodo porta nibh. Fusce hendrerit mauris quis lacinia convallis. Sed quis posuere libero, quis aliquet diam. Sed pulvinar magna ut aliquet porta.
+                                
+                                Sed felis mauris, placerat et porta id, scelerisque et arcu. Nunc eget sagittis mauris. Nullam ac luctus nibh, a finibus eros. Vestibulum malesuada leo id nibh facilisis, congue convallis mauris convallis. Phasellus ultricies, tortor in varius cursus, quam turpis venenatis nulla, ac tristique augue libero et neque. Suspendisse interdum quam ut ipsum sagittis semper. Praesent quis arcu arcu.
+                                
+                                Nam quis vulputate metus, vel volutpat diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta bibendum sagittis. Donec tincidunt lacus lectus, nec egestas ex euismod ultricies. Sed sagittis ipsum sagittis justo tincidunt efficitur.
+                                
+                                Nam ullamcorper interdum quam, ut laoreet sapien eleifend in. Vestibulum egestas sem eu erat luctus, id lobortis felis tristique. Aenean sodales condimentum hendrerit. Integer leo neque, volutpat quis posuere a, pharetra sit amet nisi. Nullam blandit turpis massa, vel commodo quam volutpat id. Nam non enim ipsum. Ut pulvinar est id diam dictum, et dictum elit vehicula.
+                                
+                                In vitae quam bibendum nisl fringilla aliquam. Phasellus sollicitudin turpis sit amet maximus porttitor. Donec elementum mauris dolor, hendrerit sagittis ex accumsan ac. Donec dapibus malesuada eros, vel viverra nisi. Aliquam erat volutpat. Aenean fermentum enim eget lorem venenatis molestie. Vivamus mollis semper luctus. Nam vel ligula feugiat, dapibus sapien a, consectetur purus. Etiam at scelerisque ligula. Fusce pretium molestie blandit. Cras posuere id mauris quis scelerisque.
+                                
+                                Cras a tincidunt nibh. Fusce sem dui, accumsan ac elit id, dignissim pulvinar massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum risus tortor, mollis nec mollis lacinia, molestie ac erat. In felis magna, tincidunt vitae nulla non, pellentesque facilisis diam. Praesent libero tortor, dignissim ac consequat ac, lacinia in augue. Pellentesque non maximus urna. Donec fringilla nisi vel scelerisque tempor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ornare, orci ut finibus ultrices, leo dolor faucibus mi, ut pharetra sem urna a velit. Praesent velit sapien, vulputate et metus nec, posuere lobortis ante.
+                                
+                                Praesent varius faucibus tincidunt. Vivamus non ex luctus, venenatis erat tristique, aliquam metus. Pellentesque urna massa, aliquam eget vulputate sed, mollis in lectus. Phasellus vel tempor dolor. Cras erat massa, congue in viverra in, efficitur quis elit. Aliquam sed porta orci. Sed mattis cursus ipsum, id cursus lectus imperdiet in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lobortis quam erat, interdum blandit tortor porta at. Maecenas ultrices tortor vitae varius gravida. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi condimentum tincidunt neque, in ullamcorper lacus pharetra vitae. Maecenas suscipit eleifend tempor.
+                                
+                                Duis id est bibendum, finibus augue eu, faucibus magna. Quisque ultricies eros libero, id condimentum sapien efficitur a. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc sollicitudin mi non malesuada lobortis. Maecenas eget fermentum turpis, non sodales tellus. Vivamus et diam vel lorem venenatis posuere. Proin interdum, metus et euismod viverra, sapien lectus eleifend turpis, a gravida ligula lectus vel felis.
+                                
+                                Donec rutrum vehicula diam nec pretium. Nullam euismod tempus lobortis. Nam nec odio nec urna placerat porttitor a a magna. Aenean eu urna ornare, auctor neque ac, lobortis turpis. Duis sit amet lacus consectetur, molestie lectus quis, cursus lorem. Etiam ut dui eu nunc mollis pretium non quis purus. Maecenas ut ante orci. Integer at pellentesque lorem. Quisque lorem risus, faucibus nec scelerisque sit amet, varius quis nulla. Aliquam dui arcu, sagittis at placerat vitae, suscipit eu ligula. Nulla risus urna, vehicula quis sapien non, pellentesque fringilla est. Sed finibus elementum odio quis malesuada. Nam non eleifend lacus. Suspendisse et ligula erat. Aenean in nibh nibh.
+                                
+                                Nulla velit tortor, laoreet quis luctus ut, facilisis non justo. In nec neque eget nulla porta sagittis sed vel est. In et leo condimentum, elementum erat ac, lacinia nibh. Nullam lacus tellus, congue accumsan sodales placerat, luctus sed nisi. Morbi bibendum ligula et magna rutrum, vitae malesuada libero gravida. Suspendisse tincidunt mi nisl, a accumsan purus consectetur sit amet. Sed consequat molestie orci. Morbi at nisi vel mauris pharetra efficitur. Suspendisse nec tristique quam. Donec rutrum laoreet nunc, et dictum enim tristique eget. Donec maximus augue sed ante condimentum tempus. Cras tristique nibh et dui fringilla auctor. Morbi hendrerit sapien in vestibulum blandit. Quisque id sollicitudin nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                
+                                Donec metus velit, consectetur ac pulvinar eget, sagittis vel nibh. Nulla euismod posuere sapien a posuere. Donec ut dolor auctor, fringilla arcu et, lacinia lorem. Aliquam porta at leo sed facilisis. Suspendisse elementum vestibulum dui ac blandit. Vivamus rhoncus elementum tellus vitae faucibus. Aenean eros felis, scelerisque sed turpis tincidunt, dictum porta sapien. Suspendisse potenti. Proin diam leo, ornare eu elit at, tristique bibendum nisl. Maecenas justo orci, venenatis sit amet tempus vel, ornare sed diam. Maecenas ullamcorper eu mauris eu placerat.
+                                
+                                Integer arcu mauris, efficitur in libero cursus, finibus fringilla ex. Quisque vel arcu dignissim, dictum tortor vel, tempor magna. Vestibulum vehicula nisl felis, ut vestibulum nisl iaculis dignissim. Nam posuere nulla a scelerisque mollis. Nullam vel nunc vitae est facilisis pharetra. Sed sem elit, consequat sit amet erat ut, volutpat fringilla lorem. Quisque lorem lorem, dignissim eget ullamcorper at, pellentesque non sapien. Integer molestie tortor a enim dictum commodo. Proin ullamcorper quam in porttitor placerat. Aliquam luctus efficitur purus id mattis. Vivamus finibus libero quis ornare lobortis.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="Dependencies/JavaScript/content.js"></script>
+        <script src="Dependencies/JavaScript/changeNavBar.js"></script>
     </body>
 </html>

@@ -13,13 +13,12 @@ function showCategories(){
 function hideCategories(){
     category.style.display = "none";
     categoryArrow.innerHTML = currentCategory + " <i class='fas fa-chevron-down' style='margin-left: 5px;'></i>";
-
 }
 
 class Category{
     constructor(categoryName, movies, upcomingMovies, backgroundColor){
         this.categoryName = categoryName;
-        this.introPhoto = '/Users/milovanarsul/Documents/Movie-Rental-Systems/MovieRental/Dependencies/ImageAssets/Categories_Main/' + this.categoryName + ".jpeg";
+        this.introPhoto = '../MovieRental/Dependencies/ImageAssets/Categories_Main/' + this.categoryName + ".jpeg";
         this.movies = movies;
         this.upcomingMovies = upcomingMovies;
         this.backgroundColor = "#" + backgroundColor;
