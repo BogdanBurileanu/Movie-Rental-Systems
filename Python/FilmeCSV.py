@@ -47,6 +47,7 @@ with open('Filme.csv','w',newline='')as file:
         
     
         writer.writerow([nume,genre,director,rating,movieHour,year,desc,url_search(nume_film[0]['title'])])
+    file.close()
     
 
 
