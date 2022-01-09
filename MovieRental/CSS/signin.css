@@ -3,7 +3,7 @@
     src: url("../Dependencies/Fonts/IBMPlexSans-Bold.ttf");
 }
 body{
-    background-image: url("../Dependencies/ImageAssets/slideshow1.png");
+    background-image: url("../Dependencies/ImageAssets/slideshow2.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -73,7 +73,7 @@ body{
       background-color: rgb(211, 195, 195);
       border-radius: 8px;
       width: 27vh;
-      margin-top: 8vh;
+      margin-top: 2vh;
       color:black;
       font-family:'Font1';
       object-fit: contain;
@@ -89,6 +89,7 @@ body{
     margin-top: 2vh;
     color:black;
     font-family:'Font1';
+    object-fit: contain;
 }
 .input3{
   font-weight: bold;
@@ -97,7 +98,7 @@ body{
   background-color: rgb(211, 195, 195);
   border-radius: 8px;
   width: 27vh;
-  margin-top: 4vh;
+  margin-top: 5vh;
   color:black;
   font-family:'Font1';
   object-fit: contain;
@@ -126,7 +127,7 @@ body{
  .logSignButton
  {
      margin-left:2.9vh;
-     margin-top: 6vh;
+     margin-top: 2.7vh;
      border-radius: 6px;
      padding: 1.6vh 11vh;
      background-color: black;

@@ -1,11 +1,11 @@
 function BckLogin()
 {
-    document.body.style.backgroundImage="url(../Dependencies/ImageAssets/slideshow1.png)";
+    window.location.href = "./login.html";
     
 }
 function BckSignin()
 {
-    document.body.style.backgroundImage="url(../Dependencies/ImageAssets/slideshow2.png)";
+    window.location.href="./sign-in.html";
     
 }
 
@@ -21,7 +21,7 @@ function change2()
 
 function HomePg()
 {
-    window.location.href="../main.html"
+    window.location.href="./main.html"
 }
 
 function yourAccount(pageType){
@@ -65,6 +65,7 @@ function yourAccount(pageType){
 
     disableScroll();
 }
+
 
 function disableScroll() {
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -119,3 +120,5 @@ function enableScroll(pageType) {
 
     window.onscroll = function() {};
 }
+
+

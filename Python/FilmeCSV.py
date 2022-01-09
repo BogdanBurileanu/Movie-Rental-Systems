@@ -28,7 +28,7 @@ while(x!=n):
     vec=np.array(lista)
 with open('Filme.csv','w',newline='')as file:
     writer=csv.writer(file)
-    writer.writerow(["Nume film","Gen film","Director","Nota IMDB","Descriere","Trailer"])
+    writer.writerow(["Nume film","Gen film","Director","Nota IMDB","Durata film","An","Descriere","Trailer"])
     for i in vec:
         nume=IM.get_movie(i)
         for director in nume['directors']:
@@ -36,10 +36,17 @@ with open('Filme.csv','w',newline='')as file:
         
         genre=nume.data['genres']
         rating=nume.data['rating']
-        desc=nume.data['plot outline']
+        desc=nume.data['plot outline'] 
+        movieHour=nume.data['runtimes']
+        movieHour=int(movieHour[0])
+        if(movieHour>60):
+            ore=movieHour//60
+            minute=movieHour-(60*ore)
+            movieHour=str(ore)+"h "+str(minute)+ "m"
+        year=nume.data['year']
         
     
-        writer.writerow([nume,genre,director,rating,desc,url_search(nume_film[0]['title'])])
+        writer.writerow([nume,genre,director,rating,movieHour,year,desc,url_search(nume_film[0]['title'])])
     
 
 
